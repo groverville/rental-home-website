@@ -7,55 +7,64 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <img src="hero.jpeg" alt="Luxury vacation rental with pool" class="hero-image" />
+    <img src="hero.jpeg" alt="Luxury rental property" class="hero-image" />
     <div class="hero-text">
       <h1>Your Oasis Retreat</h1>
       <p>Elegant comfort in a peaceful setting. Escape, unwind, and recharge.</p>
-      <a href="#booking" class="btn-primary">Check Availability</a>
+      <a href="#availability" class="btn-primary">Check Availability</a>
     </div>
   </section>
 
-  <!-- Property Overview -->
+  <!-- About Section -->
   <section class="section">
     <div class="container">
       <h2>About the Property</h2>
-      <p>Our beautifully designed home features 3 spacious bedrooms, 2 luxurious bathrooms, and a fully equipped kitchen — all wrapped in calming, modern design. Outside, enjoy your own private pool, a tranquil patio, and space to unwind under the sun.</p>
+      <p>Our home offers 3 spacious bedrooms, 2 elegant bathrooms, a chef’s kitchen, and a private pool. Whether you're seeking a weekend escape or an extended stay, this serene retreat is designed for luxurious rest and connection.</p>
     </div>
   </section>
 
   <!-- Amenities -->
-  <section class="section">
-    <div class="container amenities">
+  <section class="section alt-bg">
+    <div class="container">
       <h2>Included Amenities</h2>
       <ul>
         <li>High-speed Wi-Fi</li>
-        <li>Smart TV with streaming</li>
-        <li>Fully stocked kitchen</li>
-        <li>Private pool and outdoor seating</li>
-        <li>Luxury linens and toiletries</li>
+        <li>Smart TV with streaming apps</li>
+        <li>Fully equipped kitchen</li>
+        <li>Private pool + outdoor lounge</li>
+        <li>Luxury linens & organic toiletries</li>
         <li>Washer & dryer</li>
-        <li>Free private parking</li>
+        <li>Free on-site parking</li>
       </ul>
     </div>
   </section>
 
-  <!-- Booking CTA -->
-  <section class="section booking" id="booking">
+  <!-- Availability -->
+  <section class="section" id="availability">
     <div class="container">
-      <h2>Ready to Book?</h2>
-      <p>Check availability and reserve your stay securely on Airbnb.</p>
-      <a href="https://www.airbnb.com/l/dA6gSiQa" target="_blank" class="btn-primary">View on Airbnb</a>
+      <h2>Availability Calendar</h2>
+      <p>See our real-time availability below. Reach out for special requests or flexible dates.</p>
+      <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id%40group.calendar.google.com&ctz=America%2FNew_York" style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2>Book Your Stay</h2>
+      <p>Skip the fees — secure your stay directly below using our safe Stripe checkout.</p>
+      <a href="https://buy.stripe.com/test_checkout_link" target="_blank" class="btn-primary">Book Now</a>
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="section contact">
+  <section class="section">
     <div class="container">
       <h2>Contact Us</h2>
       <form action="#" method="POST">
