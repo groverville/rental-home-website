@@ -6,6 +6,17 @@
   <title>Your Oasis Retreat</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Book your stay at Oasis Retreat, a luxurious vacation rental offering a private pool, elegant amenities, and serene comfort.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Oasis Retreat | Luxury Vacation Rental">
+  <meta property="og:description" content="Luxury, tranquility, and space to unwind. Explore our serene vacation rental.">
+  <meta property="og:image" content="https://yourdomain.com/images/hero.jpeg">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
@@ -23,7 +34,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-overlay">
-      <img src="hero.jpeg" alt="Luxury rental hero image" class="hero-image">
+      <img src="hero.jpeg" alt="Beautiful private pool at Oasis Retreat luxury vacation rental" class="hero-image">
     </div>
     <div class="hero-text">
       <h1>Your Oasis Retreat</h1>
@@ -31,16 +42,16 @@
     </div>
   </section>
 
-  <!-- Welcome / Intro -->
+  <!-- Welcome -->
   <section class="section">
     <div class="container">
       <h2>Welcome</h2>
       <p>Welcome to your private escape. Nestled in a peaceful neighborhood, our home offers everything you need to relax, recharge, and reconnect. Featuring elegant design, a private pool, and thoughtful amenities, Oasis Retreat is more than a place to stay — it's an experience.</p>
 
       <div class="floating-gallery">
-        <img src="images/gallery1.jpg" alt="Interior photo">
-        <img src="images/gallery2.jpg" alt="Interior photo">
-        <img src="images/gallery3.jpg" alt="Interior photo">
+        <img src="images/gallery1.jpg" alt="Open-concept living area with natural light and designer furniture">
+        <img src="images/gallery2.jpg" alt="Modern chef's kitchen with island and stainless steel appliances">
+        <img src="images/gallery3.jpg" alt="Private backyard with pool and lounge seating">
       </div>
     </div>
   </section>
@@ -58,6 +69,43 @@
       </ul>
     </div>
   </section>
+
+  <!-- FAQ -->
+  <section class="section alt-bg">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+
+      <h3>Is the pool private?</h3>
+      <p>Yes — the pool is fully private and only for use by Oasis Retreat guests.</p>
+
+      <h3>How far is the beach?</h3>
+      <p>The nearest beach is about a 10-minute drive from the home.</p>
+
+      <h3>Do you allow long-term stays?</h3>
+      <p>Yes! We welcome extended stays and offer discounted rates for 7+ nights.</p>
+
+      <h3>Is there parking available?</h3>
+      <p>Yes, there is free private driveway parking for two vehicles.</p>
+    </div>
+  </section>
+
+  <!-- Structured Data for LLMs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Oasis Retreat",
+    "description": "A luxury vacation rental with private pool and modern amenities.",
+    "url": "https://groverville.github.io/rental-home-website/",
+    "image": "https://yourdomain.com/images/hero.jpeg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Fort Myers",
+      "addressRegion": "Florida",
+      "addressCountry": "US"
+    }
+  }
+  </script>
 
 </body>
 </html>
