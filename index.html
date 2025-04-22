@@ -4,75 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Oasis Retreat</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">Oasis Retreat</div>
+    <nav>
+      <a href="gallery.html">Gallery</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://buy.stripe.com/test_checkout_link" class="btn-primary">Book Now</a>
+    </nav>
+  </header>
+
   <!-- Hero -->
   <section class="hero">
-    <img src="hero.jpeg" alt="Luxury rental property" class="hero-image" />
+    <img src="hero.jpeg" alt="Luxury rental hero image" class="hero-image">
     <div class="hero-text">
       <h1>Your Oasis Retreat</h1>
-      <p>Elegant comfort in a peaceful setting. Escape, unwind, and recharge.</p>
-      <a href="#availability" class="btn-primary">Check Availability</a>
+      <p>Luxury, tranquility, and space to unwind.</p>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- Welcome / Intro -->
   <section class="section">
     <div class="container">
-      <h2>About the Property</h2>
-      <p>Our home offers 3 spacious bedrooms, 2 elegant bathrooms, a chef’s kitchen, and a private pool. Whether you're seeking a weekend escape or an extended stay, this serene retreat is designed for luxurious rest and connection.</p>
+      <h2>Welcome</h2>
+      <p>Welcome to your private escape. Nestled in a peaceful neighborhood, our home offers everything you need to relax, recharge, and reconnect. Featuring elegant design, a private pool, and thoughtful amenities, Oasis Retreat is more than a place to stay — it's an experience.</p>
     </div>
   </section>
 
-  <!-- Amenities -->
+  <!-- Highlights -->
   <section class="section alt-bg">
-    <div class="container">
-      <h2>Included Amenities</h2>
+    <div class="container highlights">
+      <h2>What You'll Love</h2>
       <ul>
-        <li>High-speed Wi-Fi</li>
-        <li>Smart TV with streaming apps</li>
-        <li>Fully equipped kitchen</li>
-        <li>Private pool + outdoor lounge</li>
-        <li>Luxury linens & organic toiletries</li>
-        <li>Washer & dryer</li>
-        <li>Free on-site parking</li>
+        <li>3 serene bedrooms with luxury linens</li>
+        <li>Fully equipped chef’s kitchen</li>
+        <li>Private pool + patio with lounge chairs</li>
+        <li>High-speed Wi-Fi and Smart TV</li>
+        <li>Modern bathrooms stocked with essentials</li>
       </ul>
-    </div>
-  </section>
-
-  <!-- Availability -->
-  <section class="section" id="availability">
-    <div class="container">
-      <h2>Availability Calendar</h2>
-      <p>See our real-time availability below. Reach out for special requests or flexible dates.</p>
-      <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id%40group.calendar.google.com&ctz=America%2FNew_York" style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-    </div>
-  </section>
-
-  <!-- Booking -->
-  <section class="section alt-bg">
-    <div class="container">
-      <h2>Book Your Stay</h2>
-      <p>Skip the fees — secure your stay directly below using our safe Stripe checkout.</p>
-      <a href="https://buy.stripe.com/test_checkout_link" target="_blank" class="btn-primary">Book Now</a>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section">
-    <div class="container">
-      <h2>Contact Us</h2>
-      <form action="#" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn-secondary">Send Message</button>
-      </form>
     </div>
   </section>
 
