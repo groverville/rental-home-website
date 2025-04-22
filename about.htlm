@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Oasis Retreat</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Learn more about Oasis Retreat — a serene luxury vacation rental with premium amenities and a private pool.">
+  <meta property="og:title" content="About Oasis Retreat">
+  <meta property="og:description" content="Discover what makes Oasis Retreat a truly relaxing and luxurious experience.">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">Oasis Retreat</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://buy.stripe.com/test_checkout_link" class="btn-primary">Book Now</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>About Oasis Retreat</h2>
+      <p>Oasis Retreat was designed to be more than just a place to sleep — it’s a destination that brings calm, style, and comfort together. Whether you're sipping coffee poolside or enjoying a movie in our cozy living room, every moment here is curated to help you unwind.</p>
+
+      <p>We believe travel should feel like home — with a few beautiful upgrades. From luxury linens and local artwork to modern appliances and thoughtful touches, Oasis Retreat is the kind of stay that guests remember, return to, and recommend.</p>
+
+      <p>Thank you for considering us as part of your journey.</p>
+    </div>
+  </section>
+
+</body>
+</html>
