@@ -6,57 +6,65 @@
   <title>Your Oasis Retreat</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <!-- Hero Section -->
-  <header class="hero">
-    <h1>Your Oasis Retreat</h1>
-    <p>Chic comfort meets serene escape. Book your dream stay today.</p>
-    <a href="#booking" class="cta-button">Reserve Now</a>
-  </header>
+  <section class="hero">
+    <img src="hero.jpg" alt="Beautiful vacation rental" class="hero-image" />
+    <div class="hero-text">
+      <h1>Your Oasis Retreat</h1>
+      <p>Elegant comfort in a peaceful setting. Escape, unwind, and recharge.</p>
+      <a href="#booking" class="btn-primary">Check Availability</a>
+    </div>
+  </section>
 
-  <!-- Property Highlights -->
-  <section class="card">
-    <h2>At a Glance</h2>
-    <ul>
-      <li>3 Bedrooms · King Beds</li>
-      <li>2 Designer Bathrooms</li>
-      <li>Chef-Ready Kitchen</li>
-      <li>Private Pool + Lounge Patio</li>
-    </ul>
+  <!-- Property Overview -->
+  <section class="section">
+    <div class="container">
+      <h2>About the Property</h2>
+      <p>Our beautifully designed home features 3 spacious bedrooms, 2 luxurious bathrooms, and a fully equipped kitchen — all wrapped in calming, modern design. Outside, enjoy your own private pool, a tranquil patio, and space to unwind under the sun.</p>
+    </div>
   </section>
 
   <!-- Amenities -->
-  <section class="card">
-    <h2>Amenities</h2>
-    <ul>
-      <li>High-Speed Wi-Fi</li>
-      <li>Streaming-Ready Smart TV</li>
-      <li>Washer & Dryer</li>
-      <li>Fresh Towels, Linens & Toiletries</li>
-      <li>Free Parking</li>
-    </ul>
+  <section class="section">
+    <div class="container amenities">
+      <h2>Included Amenities</h2>
+      <ul>
+        <li>High-speed Wi-Fi</li>
+        <li>Smart TV with streaming</li>
+        <li>Fully stocked kitchen</li>
+        <li>Private pool and outdoor seating</li>
+        <li>Luxury linens and toiletries</li>
+        <li>Washer & dryer</li>
+        <li>Free private parking</li>
+      </ul>
+    </div>
   </section>
 
   <!-- Booking CTA -->
-  <section class="card" id="booking">
-    <h2>Book Your Stay</h2>
-    <p>Check dates and secure your reservation on Airbnb.</p>
-    <a href="https://www.airbnb.com/l/dA6gSiQa" target="_blank" class="cta-button">View on Airbnb</a>
+  <section class="section booking" id="booking">
+    <div class="container">
+      <h2>Ready to Book?</h2>
+      <p>Check availability and reserve your stay securely on Airbnb.</p>
+      <a href="https://www.airbnb.com/l/dA6gSiQa" target="_blank" class="btn-primary">View on Airbnb</a>
+    </div>
   </section>
 
-  <!-- Contact Form -->
-  <section class="card" id="contact">
-    <h2>Have Questions?</h2>
-    <form action="#" method="POST">
-      <input type="text" name="name" placeholder="Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Your message" rows="4" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <!-- Contact -->
+  <section class="section contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-secondary">Send Message</button>
+      </form>
+    </div>
   </section>
 
 </body>
