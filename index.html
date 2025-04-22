@@ -2,68 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Oasis Retreat</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- Link to CSS -->
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- Hero Section -->
   <header class="hero">
-    <div class="overlay">
-      <h1>Your Oasis Retreat</h1>
-      <p>Experience tranquility and comfort in our serene getaway.</p>
-      <a href="#booking" class="cta-button">Book Your Stay</a>
-    </div>
+    <h1>Your Oasis Retreat</h1>
+    <p>Chic comfort meets serene escape. Book your dream stay today.</p>
+    <a href="#booking" class="cta-button">Reserve Now</a>
   </header>
 
-  <!-- Property Details -->
-  <section id="details">
-    <h2>Property Details</h2>
+  <!-- Property Highlights -->
+  <section class="card">
+    <h2>At a Glance</h2>
     <ul>
-      <li>3 spacious bedrooms with king-sized beds</li>
-      <li>2 full bathrooms with modern fixtures</li>
-      <li>Open-concept living and dining space</li>
-      <li>Fully equipped kitchen with high-end appliances</li>
-      <li>Private backyard with pool, lounge chairs, and BBQ</li>
+      <li>3 Bedrooms · King Beds</li>
+      <li>2 Designer Bathrooms</li>
+      <li>Chef-Ready Kitchen</li>
+      <li>Private Pool + Lounge Patio</li>
     </ul>
   </section>
 
   <!-- Amenities -->
-  <section id="amenities">
+  <section class="card">
     <h2>Amenities</h2>
     <ul>
-      <li>High-speed Wi-Fi</li>
-      <li>Smart TV with streaming services</li>
-      <li>Air conditioning and heating</li>
-      <li>Washer and dryer</li>
-      <li>Free parking on premises</li>
-      <li>Fresh towels, linens, and toiletries</li>
+      <li>High-Speed Wi-Fi</li>
+      <li>Streaming-Ready Smart TV</li>
+      <li>Washer & Dryer</li>
+      <li>Fresh Towels, Linens & Toiletries</li>
+      <li>Free Parking</li>
     </ul>
   </section>
 
-  <!-- Booking -->
-  <section id="booking">
+  <!-- Booking CTA -->
+  <section class="card" id="booking">
     <h2>Book Your Stay</h2>
-    <p>Check availability and reserve your spot at our peaceful retreat.</p>
+    <p>Check dates and secure your reservation on Airbnb.</p>
     <a href="https://www.airbnb.com/l/dA6gSiQa" target="_blank" class="cta-button">View on Airbnb</a>
   </section>
 
   <!-- Contact Form -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Have questions before you book? Reach out and we'll get back to you promptly.</p>
+  <section class="card" id="contact">
+    <h2>Have Questions?</h2>
     <form action="#" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <input type="tel" name="phone" placeholder="Your Phone Number" />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Inquiry</button>
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Your message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
   </section>
 
