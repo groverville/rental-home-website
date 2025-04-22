@@ -1,0 +1,45 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #FFF8F0;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.hero {
+  background: url('your-pool-image.jpg') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+}
+
+.cta-button {
+  background-color: #FF6F61;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+form input, form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1em;
+}
+form button {
+  background-color: #A8D5BA;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+}
