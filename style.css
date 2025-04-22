@@ -1,32 +1,29 @@
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap');
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
 
-/* Global Reset + Base */
+/* Global Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.3s ease;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #FFFFFF;
-  color: #222;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #FAFAF6;
+  color: #111111;
+  padding: 40px 20px;
   line-height: 1.6;
 }
 
-/* Headings */
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  color: #2F3E46;
+h1, h2 {
   font-weight: 600;
   margin-bottom: 20px;
 }
 
 a {
+  color: #111111;
   text-decoration: none;
-  color: #FF6F61;
 }
 
 ul {
@@ -34,105 +31,100 @@ ul {
   padding-left: 0;
 }
 
-ul li::before {
-  content: "✓";
-  color: #A8D5BA;
-  margin-right: 10px;
+ul li {
+  padding: 6px 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 /* Hero Section */
 .hero {
-  background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
-  background-size: cover;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 60px 40px;
-  border-radius: 12px;
+  background-color: #ffffff;
+  border: 2px solid #111111;
+  padding: 60px 30px;
   text-align: center;
-  color: #fff;
-  max-width: 90%;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0 #111111;
 }
 
-.overlay h1 {
-  font-size: 3.5em;
-  margin-bottom: 15px;
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
 }
 
-.overlay p {
-  font-size: 1.2em;
-  margin-bottom: 25px;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .cta-button {
-  background-color: #FF6F61;
-  color: white;
-  padding: 14px 26px;
+  background-color: #FF7A59;
+  color: #ffffff;
+  padding: 14px 28px;
+  font-size: 1rem;
   border: none;
   border-radius: 8px;
-  font-size: 1.1em;
   display: inline-block;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 #111111;
+  transition: transform 0.2s ease;
 }
 
-/* Content Sections */
-section {
-  padding: 80px 20px;
-  max-width: 1000px;
-  margin: 40px auto;
-  background-color: #F7F7F7;
+.cta-button:hover {
+  transform: scale(1.04);
+}
+
+/* Card Layout */
+.card {
+  background-color: #ffffff;
+  border: 2px solid #111111;
+  padding: 40px 30px;
+  margin: 0 auto 30px auto;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-
-section p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
+  box-shadow: 6px 6px 0 #111111;
+  max-width: 720px;
 }
 
 /* Form Styles */
 form input,
 form textarea {
   width: 100%;
-  margin-bottom: 20px;
   padding: 12px 14px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: 'Inter', sans-serif;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 2px solid #111111;
+  border-radius: 8px;
+  background-color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 form button {
   background-color: #A8D5BA;
-  color: white;
+  color: #111111;
+  font-weight: 600;
   border: none;
   padding: 12px 20px;
-  font-size: 1em;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  box-shadow: 4px 4px 0 #111111;
+  transition: transform 0.2s ease;
 }
 
-/* Responsive Layout */
-@media screen and (max-width: 768px) {
-  .overlay h1 {
-    font-size: 2.2em;
-  }
+form button:hover {
+  transform: scale(1.03);
+}
 
-  .overlay p {
-    font-size: 1em;
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
   }
 
   .cta-button {
-    font-size: 1em;
     padding: 12px 20px;
   }
 
-  section {
-    padding: 60px 15px;
+  .card {
+    padding: 30px 20px;
   }
 }
