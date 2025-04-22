@@ -1,14 +1,27 @@
-/* Reset + Base styles */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #FFF8F0;
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap');
+
+/* Global Reset + Base */
+* {
   margin: 0;
   padding: 0;
-  color: #333;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FFFFFF;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Headings */
 h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
   color: #2F3E46;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 a {
@@ -16,49 +29,9 @@ a {
   color: #FF6F61;
 }
 
-/* Hero section */
-.hero {
-  background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
-  background-size: cover;
-  text-align: center;
-  padding: 100px 20px;
-  color: white;
-}
-
-.hero h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 1.3em;
-}
-
-.cta-button {
-  background-color: #FF6F61;
-  color: white;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1em;
-  margin-top: 20px;
-  display: inline-block;
-}
-
-/* Sections */
-section {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
-  background-color: #ffffff;
-  border-radius: 8px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
 ul {
-  list-style-type: none;
-  padding: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 ul li::before {
@@ -67,19 +40,76 @@ ul li::before {
   margin-right: 10px;
 }
 
+/* Hero Section */
+.hero {
+  background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 60px 40px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  max-width: 90%;
+}
+
+.overlay h1 {
+  font-size: 3.5em;
+  margin-bottom: 15px;
+}
+
+.overlay p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+.cta-button {
+  background-color: #FF6F61;
+  color: white;
+  padding: 14px 26px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  display: inline-block;
+}
+
+/* Content Sections */
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #F7F7F7;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+section p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
 form input,
 form textarea {
   width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
+  margin-bottom: 20px;
+  padding: 12px 14px;
   font-size: 1em;
   border: 1px solid #ccc;
   border-radius: 6px;
+  font-family: 'Inter', sans-serif;
 }
 
 form button {
   background-color: #A8D5BA;
-  color: #fff;
+  color: white;
   border: none;
   padding: 12px 20px;
   font-size: 1em;
@@ -87,13 +117,22 @@ form button {
   cursor: pointer;
 }
 
-/* Responsive */
+/* Responsive Layout */
 @media screen and (max-width: 768px) {
-  .hero h1 {
-    font-size: 2em;
+  .overlay h1 {
+    font-size: 2.2em;
   }
 
-  .hero p {
+  .overlay p {
     font-size: 1em;
+  }
+
+  .cta-button {
+    font-size: 1em;
+    padding: 12px 20px;
+  }
+
+  section {
+    padding: 60px 15px;
   }
 }
