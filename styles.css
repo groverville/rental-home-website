@@ -1,188 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&display=swap');
-
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   background: #fff;
   color: #222;
 }
+a { color: #222; text-decoration: none; }
+hr { border: none; border-top: 1px solid #eee; margin: 40px 0; }
+h1, h2 { font-family: 'Playfair Display', serif; margin-bottom: 16px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
-a {
-  color: #222;
-  text-decoration: none;
-}
+.navbar { border-bottom: 1px solid #eee; padding: 20px 40px; text-align: center; }
+.nav-wrapper { display: flex; justify-content: center; align-items: center; }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; }
+.dropdown { position: absolute; top: 20px; right: 40px; }
+.dropdown-toggle { background: none; border: none; font-size: 1rem; cursor: pointer; }
+.dropdown-menu { display: none; position: absolute; background: white; box-shadow: 0 0 8px rgba(0,0,0,0.1); padding: 10px; }
+.dropdown:hover .dropdown-menu { display: block; }
 
-hr {
-  border: none;
-  border-top: 1px solid #eee;
-  margin: 40px 0;
-}
+.hero-slider .slider { display: flex; gap: 10px; overflow-x: auto; }
+.hero-slider img { width: 100%; object-fit: cover; }
 
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 16px;
-}
+.tag { background: #eee; font-style: italic; padding: 4px 12px; display: inline-block; font-size: 0.9rem; }
+.meta-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; font-size: 0.95rem; color: #444; }
+.icon { font-size: 1rem; color: #4a90e2; }
+.summary-item { margin-bottom: 10px; }
+.bed-info { margin-top: 8px; font-size: 0.95rem; color: #555; }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+.row-section { display: flex; align-items: flex-start; gap: 60px; }
+.main-content { flex: 2; }
 
-.navbar {
-  border-bottom: 1px solid #eee;
-  padding: 20px 40px;
-  text-align: center;
-}
+.booking-box { flex: 1; position: sticky; top: 100px; background: #f9f9f9; padding: 20px; border-radius: 10px; }
+.booking-box label { display: block; margin: 10px 0 5px; }
+.booking-box input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+.booking-box button { width: 100%; padding: 12px; background: #000; color: #fff; border: none; margin-top: 16px; cursor: pointer; font-size: 1rem; }
+.booking-box button.alt { background: #fff; color: #000; border: 1px solid #000; }
+.booking-box .phone { margin-top: 20px; font-size: 0.9rem; }
 
-.nav-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-}
-
-.dropdown {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-}
-
-.dropdown-toggle {
-  background: none;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  padding: 10px;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.hero-slider {
-  overflow: hidden;
-}
-
-.hero-slider .slider {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-}
-
-.hero-slider img {
-  width: 100%;
-  object-fit: cover;
-}
-
-.tag {
-  background: #eee;
-  font-style: italic;
-  padding: 4px 12px;
-  display: inline-block;
-  font-size: 0.9rem;
-}
-
-.meta-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-  font-size: 0.95rem;
-  color: #444;
-}
-
-.icon {
-  font-size: 1rem;
-  color: #4a90e2;
-}
-
-.summary-item {
-  margin-bottom: 10px;
-}
-
-.bed-info {
-  margin-top: 8px;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.row-section {
-  display: flex;
-  align-items: flex-start;
-  gap: 60px;
-}
-
-.main-content {
-  flex: 2;
-}
-
-.booking-box {
-  flex: 1;
-  position: sticky;
-  top: 100px;
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.booking-box label {
-  display: block;
-  margin: 10px 0 5px;
-}
-
-.booking-box input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.booking-box button {
-  width: 100%;
-  padding: 12px;
-  background: #000;
-  color: #fff;
-  border: none;
-  margin-top: 16px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.booking-box button.alt {
-  background: #fff;
-  color: #000;
-  border: 1px solid #000;
-}
-
-.booking-box .phone {
-  margin-top: 20px;
-  font-size: 0.9rem;
-}
-
-.amenities ul {
-  list-style: none;
-  padding: 0;
-  columns: 2;
-}
-
-.amenities li {
-  margin-bottom: 10px;
-}
-
-.essentials-grid {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-}
+.amenities ul { list-style: none; padding: 0; columns: 2; }
+.amenities li { margin-bottom: 10px; }
+.essentials-grid { display: flex; gap: 40px; flex-wrap: wrap; }
