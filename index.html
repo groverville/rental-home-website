@@ -24,14 +24,16 @@
   </header>
 
   <!-- Hero Image Slider -->
-  <section class="hero-slider-wrapper">
-    <button class="slider-arrow left" onclick="scrollSlider(-1)">‹</button>
-    <div class="hero-slider" id="heroSlider">
-      <img src="images/gallery_1.png" alt="Gallery 1" />
-      <img src="images/gallery_2.png" alt="Gallery 2" />
-      <img src="images/gallery_3.png" alt="Gallery 3" />
+  <section class="hero-slider-wrapper full-bleed">
+    <div class="slider-container">
+      <button class="slider-arrow left" onclick="scrollSlider(-1)">‹</button>
+      <div class="hero-slider" id="heroSlider">
+        <img src="images/gallery_1.png" alt="Gallery 1" />
+        <img src="images/gallery_2.png" alt="Gallery 2" />
+        <img src="images/gallery_3.png" alt="Gallery 3" />
+      </div>
+      <button class="slider-arrow right" onclick="scrollSlider(1)">›</button>
     </div>
-    <button class="slider-arrow right" onclick="scrollSlider(1)">›</button>
   </section>
 
   <!-- Property Info -->
@@ -63,14 +65,12 @@
 
       <hr />
 
-      <!-- Description -->
       <div class="description">
         <p>This serene home is located just 15 minutes from the airport and a short drive from several stunning beaches. Designed for rest and relaxation, it blends elegance with convenience in a tranquil Florida setting.</p>
       </div>
 
       <hr />
 
-      <!-- Amenities -->
       <div class="amenities">
         <h2>Amenities</h2>
         <ul>
@@ -84,7 +84,6 @@
 
       <hr />
 
-      <!-- Map -->
       <div class="map">
         <h2>Location</h2>
         <iframe src="https://www.google.com/maps?q=Canopy+Loop+Drive,+Ft+Myers,+FL+33919&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -92,7 +91,6 @@
 
       <hr />
 
-      <!-- Availability Calendar -->
       <div class="calendar-section">
         <h2>Availability</h2>
         <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id@group.calendar.google.com" width="100%" height="300" frameborder="0"></iframe>
@@ -100,7 +98,6 @@
 
       <hr />
 
-      <!-- Essentials -->
       <div class="essentials">
         <h2>Essential Information</h2>
         <div class="essentials-flex">
@@ -117,7 +114,6 @@
       </div>
     </div>
 
-    <!-- Sticky Booking Box -->
     <div class="booking-box">
       <p class="price">From <strong>$650/night</strong></p>
       <label>Check-in<input type="date"></label>
@@ -131,7 +127,7 @@
   <script>
     function scrollSlider(direction) {
       const slider = document.getElementById("heroSlider");
-      const scrollAmount = slider.clientWidth * 0.9;
+      const scrollAmount = slider.clientWidth * 0.8;
       slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     }
   </script>
