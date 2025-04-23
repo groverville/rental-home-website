@@ -23,16 +23,18 @@
     </div>
   </header>
 
-  <!-- Hero Slider -->
-  <section class="hero-slider">
-    <div class="slider" id="slider">
-      <img src="images/gallery_1.png" alt="Spacious Living Room" />
-      <img src="images/gallery_2.png" alt="Fully Stocked Kitchen" />
-      <img src="images/gallery_3.png" alt="Private Saltwater Pool" />
+  <!-- Hero Image Slider -->
+  <section class="hero-slider-wrapper">
+    <button class="slider-arrow left" onclick="scrollSlider(-1)">‹</button>
+    <div class="hero-slider" id="heroSlider">
+      <img src="images/gallery_1.png" alt="Gallery 1" />
+      <img src="images/gallery_2.png" alt="Gallery 2" />
+      <img src="images/gallery_3.png" alt="Gallery 3" />
     </div>
+    <button class="slider-arrow right" onclick="scrollSlider(1)">›</button>
   </section>
 
-  <!-- Property Title -->
+  <!-- Property Info -->
   <section class="container property-header">
     <div class="tag">Villa</div>
     <h1>Summerville Oasis</h1>
@@ -127,14 +129,11 @@
   </section>
 
   <script>
-    const slider = document.getElementById("slider");
-    let scrollSpeed = 0.3;
-    setInterval(() => {
-      slider.scrollLeft += scrollSpeed;
-      if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-        slider.scrollLeft = 0;
-      }
-    }, 30);
+    function scrollSlider(direction) {
+      const slider = document.getElementById("heroSlider");
+      const scrollAmount = slider.clientWidth * 0.9;
+      slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
   </script>
 
 </body>
