@@ -21,26 +21,37 @@ h1, h2 {
 .navbar {
   border-bottom: 1px solid #eee;
   padding: 16px;
+  position: relative;
 }
 .nav-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .nav-logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
-.dropdown {
+.nav-links {
   position: absolute;
-  right: 24px;
-  top: 18px;
+  right: 16px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
 }
 .dropdown-toggle {
   background: none;
   border: none;
   font-size: 1rem;
   cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.dropdown-toggle:hover {
+  color: #4a90e2;
 }
 .dropdown-menu {
   display: none;
@@ -94,34 +105,37 @@ h1, h2 {
 .slider-arrow.left { left: 10px; }
 .slider-arrow.right { right: 10px; }
 
-.icon {
+.tag-box {
+  background-color: #eee;
+  padding: 4px 10px;
   display: inline-block;
-  vertical-align: middle;
-  stroke: currentColor;
-  fill: none;
-  margin-right: 6px;
-  width: 20px;
-  height: 20px;
-}
-
-.summary-row {
-  display: flex;
-  gap: 40px;
+  border-radius: 4px;
+  font-style: italic;
+  font-size: 0.9rem;
   margin-bottom: 10px;
 }
-.summary-item {
+
+.meta-row {
   display: flex;
   align-items: center;
-  font-size: 1rem;
-}
-.summary-sub {
+  gap: 10px;
   font-size: 0.95rem;
-  color: #666;
-  margin-top: 6px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.row-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.main-content {
+  flex: 2;
 }
 
 .booking-box {
-  flex: 1;
+  flex: 0 0 280px;
   position: sticky;
   top: 80px;
   background: #f9f9f9;
@@ -138,10 +152,11 @@ h1, h2 {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  width: 100%;
 }
 .booking-row {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 .booking-row label {
   flex: 1;
@@ -164,27 +179,4 @@ h1, h2 {
 .booking-box .phone {
   margin-top: 20px;
   font-size: 0.9rem;
-}
-
-.amenities ul {
-  list-style: none;
-  padding: 0;
-  columns: 2;
-}
-.amenities li {
-  margin-bottom: 10px;
-}
-
-.essentials-flex {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.info-block {
-  flex: 1;
-  min-width: 250px;
-}
-.calendar-section {
-  margin-top: 40px;
 }
