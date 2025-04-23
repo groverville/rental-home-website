@@ -25,10 +25,10 @@
 
   <!-- Hero Slider -->
   <section class="hero-slider">
-    <div class="slider">
-      <img src="images/gallery_1.png" alt="Poolside at sunset" />
-      <img src="images/gallery_2.png" alt="Open living space" />
-      <img src="images/gallery_3.png" alt="Modern kitchen" />
+    <div class="slider" id="slider">
+      <img src="images/gallery1.jpg" alt="Poolside at sunset" />
+      <img src="images/gallery2.jpg" alt="Open living space" />
+      <img src="images/gallery3.jpg" alt="Modern kitchen" />
     </div>
   </section>
 
@@ -37,7 +37,7 @@
     <div class="tag">Villa</div>
     <h1>Summerville Oasis</h1>
     <div class="meta-row">
-      <span class="icon">📍</span><a href="https://www.google.com/maps?q=Ft+Myers,+FL">Ft. Myers, FL</a>
+      <span class="icon">📍</span><a href="https://www.google.com/maps/place/Canopy+Loop+Dr,+Fort+Myers,+FL+33919">Ft. Myers, FL</a>
       <span class="divider">·</span>
       <span class="icon">🔗</span><a href="#">Share</a>
     </div>
@@ -54,15 +54,15 @@
         <div class="summary-grid">
           <div class="summary-block">
             <div class="summary-icon">👤</div>
-            <div><strong>8</strong><br/>Guests</div>
+            <div class="summary-label"><strong>8</strong> Guests</div>
           </div>
           <div class="summary-block">
             <div class="summary-icon">🛏️</div>
-            <div><strong>5</strong><br/>Beds</div>
+            <div class="summary-label"><strong>5</strong> Beds</div>
           </div>
           <div class="summary-block">
             <div class="summary-icon">🛁</div>
-            <div><strong>3</strong><br/>Baths</div>
+            <div class="summary-label"><strong>3</strong> Baths</div>
           </div>
         </div>
         <p class="summary-sub">1 King, 2 Queen, 2 Single</p>
@@ -94,12 +94,12 @@
       <!-- Map -->
       <div class="map">
         <h2>Location</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps?q=Canopy+Loop+Drive,+Ft+Myers,+FL+33919&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
 
       <hr />
 
-      <!-- Availability Calendar (moved out of sticky box) -->
+      <!-- Availability Calendar -->
       <div class="calendar-section">
         <h2>Availability</h2>
         <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id@group.calendar.google.com" width="100%" height="300" frameborder="0"></iframe>
@@ -111,13 +111,20 @@
       <div class="essentials">
         <h2>Essential Information</h2>
         <div class="essentials-grid">
-          <div><h3>Check-in / Check-out</h3><p><strong>Check-in:</strong> from 3pm</p><p><strong>Check-out:</strong> by 10am</p></div>
-          <div><h3>Deposit</h3><p>A refundable deposit will be held and released after confirming no damage occurred.</p></div>
+          <div>
+            <h3>⏰ Check-in / Check-out</h3>
+            <p><strong>Check-in:</strong> from 3pm</p>
+            <p><strong>Check-out:</strong> by 10am</p>
+          </div>
+          <div>
+            <h3>🔒 Deposit</h3>
+            <p>A refundable deposit will be held and released after confirming no damage occurred.</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Booking Box (now separate from calendar) -->
+    <!-- Sticky Booking Box -->
     <div class="booking-box">
       <p class="price">From <strong>$650/night</strong></p>
       <label>Check-in<input type="date"></label>
@@ -127,6 +134,18 @@
       <p class="phone">Or call: <strong>+1 855-553-4954</strong></p>
     </div>
   </section>
+
+  <script>
+    // Auto-scroll infinite image loop
+    const slider = document.getElementById("slider");
+    let scrollSpeed = 0.3;
+    let scrollInterval = setInterval(() => {
+      slider.scrollLeft += scrollSpeed;
+      if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+        slider.scrollLeft = 0;
+      }
+    }, 30);
+  </script>
 
 </body>
 </html>
