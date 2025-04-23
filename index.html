@@ -3,85 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Oasis Retreat</title>
+  <title>G⁴ Homes | Luxury Retreat</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Book your stay at Oasis Retreat, a luxurious vacation rental offering a private pool, elegant amenities, and serene comfort.">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Oasis Retreat | Luxury Vacation Rental">
-  <meta property="og:description" content="Luxury, tranquility, and space to unwind. Explore our serene vacation rental.">
-  <meta property="og:image" content="https://yourdomain.com/images/hero.jpeg">
-  <meta property="og:url" content="https://yourdomain.com">
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- Meta -->
+  <meta name="description" content="A refined luxury retreat offered by G⁴ Homes. Featuring elegant design, private pool, and curated amenities.">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="logo">Oasis Retreat</div>
-    <nav>
-      <a href="gallery.html">Gallery</a>
-      <a href="calendar.html">Calendar</a>
-
-      <!-- Contact Dropdown -->
-      <div class="dropdown">
-        <button class="dropdown-toggle">Contact</button>
-        <div class="dropdown-menu">
-          <a href="tel:+1234567890">Call: (123) 456-7890</a>
-          <a href="mailto:hello@oasisretreat.com">Email: hello@oasisretreat.com</a>
-        </div>
-      </div>
-
-      <a href="https://buy.stripe.com/test_checkout_link" class="btn-primary">Book Now</a>
-    </nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">G<sup>4</sup> Homes</div>
+      <nav>
+        <a href="#gallery">Gallery</a>
+        <a href="#availability">Availability</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-overlay">
-      <img src="hero.jpeg" alt="Beautiful private pool at Oasis Retreat luxury vacation rental" class="hero-image">
-    </div>
-    <div class="hero-text">
-      <h1>Your Oasis Retreat</h1>
-      <p>Luxury, tranquility, and space to unwind.</p>
+    <img src="hero.jpeg" alt="Luxury property view with pool" class="hero-image">
+  </section>
 
-      <!-- Search Form -->
-      <form class="search-bar">
-        <input type="date" name="arrival" placeholder="Arrival" required />
-        <input type="date" name="departure" placeholder="Departure" required />
-        <input type="number" name="guests" min="1" max="10" placeholder="Guests" required />
-        <button type="submit">Check Availability</button>
-      </form>
+  <!-- Intro -->
+  <section class="intro">
+    <div class="container">
+      <h1>Serene Luxury Meets Modern Living</h1>
+      <p>
+        Escape to a private oasis where elegance and nature meet. This curated retreat by G⁴ Homes blends thoughtful interiors with indoor-outdoor living, ideal for families, couples, or creatives seeking stillness and inspiration.
+      </p>
     </div>
   </section>
 
-  <!-- Welcome -->
-  <section class="section">
+  <!-- Gallery Slider -->
+  <section class="gallery" id="gallery">
     <div class="container">
-      <h2>Welcome</h2>
-      <p>Welcome to your private escape. Nestled in a peaceful neighborhood, our home offers everything you need to relax, recharge, and reconnect. Featuring elegant design, a private pool, and thoughtful amenities, Oasis Retreat is more than a place to stay — it's an experience.</p>
-
-      <div class="floating-gallery">
-        <img src="images/gallery1.jpg" alt="Open-concept living area with natural light and designer furniture">
-        <img src="images/gallery2.jpg" alt="Modern chef's kitchen with island and stainless steel appliances">
-        <img src="images/gallery3.jpg" alt="Private backyard with pool and lounge seating">
+      <h2>Gallery</h2>
+      <div class="slider">
+        <img src="images/gallery1.jpg" alt="Interior view">
+        <img src="images/gallery2.jpg" alt="Spacious bedroom">
+        <img src="images/gallery3.jpg" alt="Private pool">
       </div>
     </div>
   </section>
 
-  <!-- Highlights -->
-  <section class="section alt-bg blue-bg">
-    <div class="container highlights">
-      <h2>What You'll Love</h2>
+  <!-- Amenities -->
+  <section class="section amenities">
+    <div class="container">
+      <h2>Amenities</h2>
       <ul>
-        <li>3 serene bedrooms with luxury linens</li>
-        <li>Fully equipped chef’s kitchen</li>
-        <li>Private pool + patio with lounge chairs</li>
-        <li>High-speed Wi-Fi and Smart TV</li>
-        <li>Modern bathrooms stocked with essentials</li>
+        <li>3 King Bedrooms</li>
+        <li>2 Full Bathrooms</li>
+        <li>Private Pool & Lounge Area</li>
+        <li>High-Speed Wi-Fi</li>
+        <li>Smart TV & Streaming</li>
+        <li>Fully Equipped Kitchen</li>
+        <li>Washer & Dryer</li>
+        <li>Free Onsite Parking</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- Availability Calendar -->
+  <section class="section" id="availability">
+    <div class="container">
+      <h2>Availability</h2>
+      <p>Check available dates and plan your perfect stay.</p>
+      <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id%40group.calendar.google.com&ctz=America%2FNew_York" style="border:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <form action="#" method="POST">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
     </div>
   </section>
 
