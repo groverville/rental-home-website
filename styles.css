@@ -2,39 +2,54 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  color: #222;
   margin: 0;
-  background-color: #fff;
+  background: #fff;
+  color: #222;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 40px 0;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 16px;
 }
 
 .container {
-  max-width: 900px;
-  margin: auto;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 40px 20px;
 }
 
 .navbar {
   border-bottom: 1px solid #eee;
-  padding: 24px 20px;
+  padding: 20px 40px;
   text-align: center;
 }
 
 .nav-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
 }
 
 .nav-logo {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  font-weight: 500;
 }
 
 .dropdown {
-  position: relative;
+  position: absolute;
+  top: 20px;
+  right: 40px;
 }
 
 .dropdown-toggle {
@@ -42,187 +57,132 @@ body {
   border: none;
   font-size: 1rem;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
 }
 
 .dropdown-menu {
-  position: absolute;
-  top: 30px;
-  background-color: #fff;
-  border: 1px solid #eee;
-  padding: 10px;
   display: none;
-  z-index: 1000;
+  position: absolute;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  padding: 10px;
 }
 
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-.dropdown-menu a {
-  display: block;
-  color: #111;
-  text-decoration: none;
-  padding: 5px 10px;
+.hero-slider {
+  overflow: hidden;
+}
+
+.hero-slider .slider {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
 }
 
 .hero-slider img {
   width: 100%;
-  height: auto;
-  display: block;
+  object-fit: cover;
 }
 
-.label {
-  background-color: #eee;
+.tag {
+  background: #eee;
   font-style: italic;
+  padding: 4px 12px;
   display: inline-block;
-  padding: 5px 10px;
-  margin-bottom: 10px;
   font-size: 0.9rem;
 }
 
-.title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-.location-row {
-  margin: 10px 0;
-  font-size: 0.95rem;
-  color: #777;
-}
-
-.location-row a {
-  color: #333;
-  text-decoration: none;
-}
-
-.divider {
-  margin: 0 10px;
-}
-
-.stats {
+.meta-row {
   display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #eee;
-  padding-top: 20px;
-}
-
-.bed-details {
-  margin-top: 10px;
-  color: #555;
-}
-
-.description p {
-  font-size: 1.05rem;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 0.95rem;
   color: #444;
 }
 
-.amenities h2 {
-  font-family: 'Playfair Display', serif;
+.icon {
+  font-size: 1rem;
+  color: #4a90e2;
 }
 
-.amenity-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  list-style: none;
-  gap: 10px;
-  padding: 0;
+.summary-item {
+  margin-bottom: 10px;
 }
 
-.availability .calendar-and-booking {
+.bed-info {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.row-section {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.main-content {
+  flex: 2;
 }
 
 .booking-box {
+  flex: 1;
+  position: sticky;
+  top: 100px;
   background: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
-  flex: 1;
-  max-width: 350px;
-}
-
-.booking-box .price-label {
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-
-.booking-box .price-label span {
-  font-weight: 600;
-  font-size: 1.2rem;
 }
 
 .booking-box label {
   display: block;
-  margin-bottom: 10px;
+  margin: 10px 0 5px;
 }
 
 .booking-box input {
   width: 100%;
   padding: 10px;
-  margin-top: 4px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .booking-box button {
   width: 100%;
   padding: 12px;
-  background-color: #ff6a4d;
-  color: white;
+  background: #000;
+  color: #fff;
   border: none;
-  margin-top: 10px;
-  border-radius: 6px;
-  font-size: 1rem;
+  margin-top: 16px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .booking-box button.alt {
-  background: white;
-  color: #222;
-  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
 }
 
 .booking-box .phone {
-  text-align: center;
-  font-size: 0.9rem;
   margin-top: 20px;
+  font-size: 0.9rem;
 }
 
-.map iframe {
-  border-radius: 10px;
-  margin-top: 20px;
+.amenities ul {
+  list-style: none;
+  padding: 0;
+  columns: 2;
+}
+
+.amenities li {
+  margin-bottom: 10px;
 }
 
 .essentials-grid {
   display: flex;
-  flex-wrap: wrap;
   gap: 40px;
-}
-
-.essentials h2 {
-  font-family: 'Playfair Display', serif;
-}
-
-.essentials h2 em {
-  font-style: italic;
-}
-
-.essentials .item {
-  flex: 1;
-  min-width: 250px;
-}
-
-.essentials .item h3 {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.essentials .item p {
-  color: #555;
-  font-size: 0.95rem;
+  flex-wrap: wrap;
 }
