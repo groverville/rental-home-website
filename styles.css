@@ -60,11 +60,19 @@ h1, h2 {
   display: block;
 }
 
-.hero-slider .slider {
+/* HERO SLIDER with arrows */
+.hero-slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.hero-slider {
   display: flex;
   overflow-x: auto;
   gap: 12px;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 
 .hero-slider img {
@@ -72,8 +80,26 @@ h1, h2 {
   width: 320px;
   object-fit: cover;
   border-radius: 6px;
+  scroll-snap-align: start;
   flex-shrink: 0;
 }
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  z-index: 10;
+  color: #333;
+}
+
+.slider-arrow.left { left: 10px; }
+.slider-arrow.right { right: 10px; }
 
 .meta-row {
   display: flex;
