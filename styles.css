@@ -18,7 +18,12 @@ h1, h2 { font-family: 'Playfair Display', serif; margin-bottom: 16px; }
 .dropdown:hover .dropdown-menu { display: block; }
 
 .hero-slider .slider { display: flex; gap: 10px; overflow-x: auto; }
-.hero-slider img { width: 100%; object-fit: cover; }
+.hero-slider img {
+  width: 100%;
+  height: 420px; /* or try 350px or 300px if you want it smaller */
+  object-fit: cover;
+  border-radius: 4px;
+}
 
 .tag { background: #eee; font-style: italic; padding: 4px 12px; display: inline-block; font-size: 0.9rem; }
 .meta-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; font-size: 0.95rem; color: #444; }
