@@ -5,136 +5,345 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Summerville Oasis | G⁴ Homes</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
   <!-- Header -->
   <header class="navbar">
     <div class="nav-wrapper">
       <div class="nav-logo">G<sup>4</sup> Homes</div>
-      <div class="dropdown">
-        <button class="dropdown-toggle">Contact</button>
-        <div class="dropdown-menu">
-          <a href="tel:+1234567890">Call: (123) 456-7890</a>
-          <a href="mailto:hello@g4homes.com">Email: hello@g4homes.com</a>
+      <nav class="nav-menu">
+        <a href="#description" class="nav-link active">Description</a>
+        <a href="#amenities" class="nav-link">Amenities</a>
+        <a href="#location" class="nav-link">Location</a>
+        <a href="#availability" class="nav-link">Availability</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn-contact">Get in touch <i class="fas fa-chevron-down"></i></button>
+        <div class="contact-dropdown">
+          <a href="tel:+1234567890"><i class="fas fa-phone"></i> (123) 456-7890</a>
+          <a href="mailto:hello@g4homes.com"><i class="fas fa-envelope"></i> hello@g4homes.com</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Hero Image Slider -->
-  <section class="hero-slider-wrapper">
-    <button class="slider-arrow left" onclick="scrollSlider(-1)">‹</button>
-    <div class="hero-slider" id="heroSlider">
-      <img src="images/gallery_1.png" alt="Gallery 1" />
-      <img src="images/gallery_2.png" alt="Gallery 2" />
-      <img src="images/gallery_3.png" alt="Gallery 3" />
-    </div>
-    <button class="slider-arrow right" onclick="scrollSlider(1)">›</button>
-  </section>
-
-  <!-- Property Info -->
-  <section class="container property-header">
-    <div class="tag">Villa</div>
-    <h1>Summerville Oasis</h1>
-    <div class="meta-row">
-      <span class="icon">📍</span><a href="https://www.google.com/maps?q=Canopy+Loop+Drive,+Ft+Myers,+FL+33919">Ft. Myers, FL</a>
-      <span class="divider">·</span>
-      <span class="icon">🔗</span><a href="#">Share</a>
-    </div>
-  </section>
-
-  <hr />
-
-  <!-- Summary + Booking -->
-  <section class="container row-section">
-    <div class="main-content">
-
-      <!-- Guests / Beds / Baths -->
-      <div class="property-summary">
-        <div class="summary-row">
-          <div class="summary-item"><span class="summary-icon">👤</span><span>8 Guests</span></div>
-          <div class="summary-item"><span class="summary-icon">🛏️</span><span>5 Beds</span></div>
-          <div class="summary-item"><span class="summary-icon">🛁</span><span>3 Bathrooms</span></div>
+  <!-- Hero Image Gallery -->
+  <section class="hero-gallery">
+    <div class="gallery-container">
+      <div class="gallery-main">
+        <img src="images/gallery_1.png" alt="Summerville Oasis - Living Room" class="gallery-img active" id="galleryMain">
+        <div class="gallery-overlay">
+          <div class="property-tag">Villa</div>
+          <h1 class="property-title">Summerville Oasis</h1>
         </div>
-        <p class="summary-sub">1 King, 2 Queen, 2 Single</p>
+        <button class="gallery-nav prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+        <button class="gallery-nav next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+        <button class="gallery-view-all">View all photos</button>
       </div>
-
-      <hr />
-
-      <!-- Description -->
-      <div class="description">
-        <p>This serene home is located just 15 minutes from the airport and a short drive from several stunning beaches. Designed for rest and relaxation, it blends elegance with convenience in a tranquil Florida setting.</p>
+      <div class="gallery-thumbs">
+        <div class="thumb active" data-img="images/gallery_1.png"></div>
+        <div class="thumb" data-img="images/gallery_2.png"></div>
+        <div class="thumb" data-img="images/gallery_3.png"></div>
       </div>
+    </div>
+  </section>
 
-      <hr />
-
-      <!-- Amenities -->
-      <div class="amenities">
-        <h2>Amenities</h2>
-        <ul>
-          <li><span class="icon">🏊</span> Pool</li>
-          <li><span class="icon">🏋️</span> Gym</li>
-          <li><span class="icon">🚗</span> Secure Parking</li>
-          <li><span class="icon">📶</span> Wi-Fi</li>
-          <li><span class="icon">🏛️</span> Clubhouse</li>
-        </ul>
-      </div>
-
-      <hr />
-
-      <!-- Map -->
-      <div class="map">
-        <h2>Location</h2>
-        <iframe src="https://www.google.com/maps?q=Canopy+Loop+Drive,+Ft+Myers,+FL+33919&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-
-      <hr />
-
-      <!-- Availability Calendar -->
-      <div class="calendar-section">
-        <h2>Availability</h2>
-        <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id@group.calendar.google.com" width="100%" height="300" frameborder="0"></iframe>
-      </div>
-
-      <hr />
-
-      <!-- Essentials -->
-      <div class="essentials">
-        <h2>Essential Information</h2>
-        <div class="essentials-flex">
-          <div class="info-block">
-            <h3>⏰ Check-in / Check-out</h3>
-            <p><strong>Check-in:</strong> from 3pm</p>
-            <p><strong>Check-out:</strong> by 10am</p>
-          </div>
-          <div class="info-block">
-            <h3>🔒 Deposit</h3>
-            <p>A refundable deposit will be held and released after confirming no damage occurred.</p>
-          </div>
+  <!-- Property Header -->
+  <section class="property-header">
+    <div class="container">
+      <div class="location-share">
+        <div class="location">
+          <i class="fas fa-map-marker-alt"></i>
+          <a href="https://www.google.com/maps?q=Canopy+Loop+Drive,+Ft+Myers,+FL+33919" target="_blank">Ft. Myers, FL</a>
+        </div>
+        <div class="share-wishlist">
+          <button class="btn-wishlist"><i class="far fa-heart"></i> Add to wishlist</button>
+          <button class="btn-share"><i class="fas fa-share"></i> Share</button>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Sticky Booking Box -->
-    <div class="booking-box">
-      <p class="price">From <strong>$650/night</strong></p>
-      <label>Check-in<input type="date"></label>
-      <label>Check-out<input type="date"></label>
-      <button>Check Availability</button>
-      <button class="alt">Ask a Question</button>
-      <p class="phone">Or call: <strong>+1 855-553-4954</strong></p>
+  <!-- Main Content -->
+  <section class="main-section">
+    <div class="container">
+      <div class="content-grid">
+        <!-- Left Column: Main Content -->
+        <div class="main-content">
+          <!-- Property Summary -->
+          <div class="property-summary" id="description">
+            <div class="summary-icons">
+              <div class="summary-item">
+                <i class="fas fa-user"></i>
+                <div class="summary-text">
+                  <span class="summary-number">8</span>
+                  <span class="summary-label">Guests</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <i class="fas fa-bed"></i>
+                <div class="summary-text">
+                  <span class="summary-number">5</span>
+                  <span class="summary-label">Beds</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <i class="fas fa-bath"></i>
+                <div class="summary-text">
+                  <span class="summary-number">3</span>
+                  <span class="summary-label">Bathrooms</span>
+                </div>
+              </div>
+            </div>
+            <p class="bed-configuration">1 King, 2 Queen, 2 Single</p>
+            
+            <div class="property-description">
+              <p>This serene home is located just 15 minutes from the airport and a short drive from several stunning beaches. Designed for rest and relaxation, it blends elegance with convenience in a tranquil Florida setting.</p>
+            </div>
+          </div>
+
+          <div class="content-divider"></div>
+
+          <!-- Amenities -->
+          <div class="amenities-section" id="amenities">
+            <h2>Amenities</h2>
+            <div class="amenities-grid">
+              <div class="amenity-item">
+                <i class="fas fa-swimming-pool"></i>
+                <span>Swimming pool</span>
+              </div>
+              <div class="amenity-item">
+                <i class="fas fa-dumbbell"></i>
+                <span>Gym</span>
+              </div>
+              <div class="amenity-item">
+                <i class="fas fa-parking"></i>
+                <span>Secure parking</span>
+              </div>
+              <div class="amenity-item">
+                <i class="fas fa-wifi"></i>
+                <span>WiFi</span>
+              </div>
+              <div class="amenity-item">
+                <i class="fas fa-building"></i>
+                <span>Clubhouse</span>
+              </div>
+            </div>
+            <button class="btn-text">See all amenities</button>
+          </div>
+
+          <div class="content-divider"></div>
+
+          <!-- Location -->
+          <div class="location-section" id="location">
+            <h2>Location</h2>
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps?q=Canopy+Loop+Drive,+Ft+Myers,+FL+33919&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <div class="content-divider"></div>
+
+          <!-- Availability -->
+          <div class="availability-section" id="availability">
+            <h2>Availability</h2>
+            <div class="calendar-container">
+              <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id@group.calendar.google.com" width="100%" height="400" frameborder="0"></iframe>
+            </div>
+          </div>
+
+          <div class="content-divider"></div>
+
+          <!-- Essential Information -->
+          <div class="essentials-section">
+            <h2>Essential Information</h2>
+            <div class="essentials-grid">
+              <div class="essential-item">
+                <h3><i class="far fa-clock"></i> Check-in / Check-out</h3>
+                <div class="essential-details">
+                  <p><strong>Check-in:</strong> from 3pm</p>
+                  <p><strong>Check-out:</strong> by 10am</p>
+                </div>
+              </div>
+              <div class="essential-item">
+                <h3><i class="fas fa-shield-alt"></i> Deposit</h3>
+                <div class="essential-details">
+                  <p>A refundable deposit will be held and released after confirming no damage occurred.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Booking Box -->
+        <div class="sidebar">
+          <div class="booking-box">
+            <div class="price-container">
+              <div class="price">
+                <span class="price-amount">$650</span>
+                <span class="price-period">per night</span>
+              </div>
+              <button class="btn-info" aria-label="Price information">
+                <i class="fas fa-info-circle"></i>
+              </button>
+            </div>
+            <div class="booking-form">
+              <div class="date-inputs">
+                <div class="date-field">
+                  <label for="check-in">Check in</label>
+                  <input type="date" id="check-in" placeholder="Add dates">
+                </div>
+                <div class="date-field">
+                  <label for="check-out">Check out</label>
+                  <input type="date" id="check-out" placeholder="Add dates">
+                </div>
+              </div>
+              <button class="btn-primary">Check availability</button>
+              <button class="btn-secondary">Ask a question</button>
+              <div class="booking-contact">
+                <p>Or speak to a specialist on the phone:</p>
+                <a href="tel:+18555534954" class="phone-number">
+                  <i class="fas fa-phone"></i> +1 855-553-4954
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">G<sup>4</sup> Homes</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2025 G4 Homes. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    function scrollSlider(direction) {
-      const slider = document.getElementById("heroSlider");
-      const scrollAmount = slider.clientWidth * 0.9;
-      slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-    }
+    // Gallery functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryMain = document.getElementById('galleryMain');
+      const thumbs = document.querySelectorAll('.gallery-thumbs .thumb');
+      const prevBtn = document.querySelector('.gallery-nav.prev');
+      const nextBtn = document.querySelector('.gallery-nav.next');
+      
+      const images = ['images/gallery_1.png', 'images/gallery_2.png', 'images/gallery_3.png'];
+      let currentIndex = 0;
+      
+      // Update active thumbnail
+      function updateThumbs() {
+        thumbs.forEach((thumb, i) => {
+          if (i === currentIndex) {
+            thumb.classList.add('active');
+          } else {
+            thumb.classList.remove('active');
+          }
+        });
+      }
+      
+      // Change main image
+      function changeImage(index) {
+        currentIndex = index;
+        galleryMain.src = images[index];
+        updateThumbs();
+      }
+      
+      // Thumbnail click events
+      thumbs.forEach((thumb, i) => {
+        thumb.addEventListener('click', () => changeImage(i));
+      });
+      
+      // Navigation buttons
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        changeImage(currentIndex);
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        changeImage(currentIndex);
+      });
+      
+      // Navigation menu highlighting
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section[id]');
+      
+      function highlightNavLink() {
+        const scrollY = window.pageYOffset;
+        
+        sections.forEach(section => {
+          const sectionHeight = section.offsetHeight;
+          const sectionTop = section.offsetTop - 100;
+          const sectionId = section.getAttribute('id');
+          
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', highlightNavLink);
+      
+      // Contact dropdown
+      const contactBtn = document.querySelector('.btn-contact');
+      const contactDropdown = document.querySelector('.contact-dropdown');
+      
+      contactBtn.addEventListener('click', () => {
+        contactDropdown.classList.toggle('show');
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!contactBtn.contains(e.target) && !contactDropdown.contains(e.target)) {
+          contactDropdown.classList.remove('show');
+        }
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
   </script>
-
 </body>
 </html>
+
