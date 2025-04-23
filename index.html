@@ -26,9 +26,9 @@
   <!-- Hero Slider -->
   <section class="hero-slider">
     <div class="slider" id="slider">
-      <img src="images/gallery_1.png" alt="Poolside at sunset" />
-      <img src="images/gallery_2.png" alt="Open living space" />
-      <img src="images/gallery_3.png" alt="Modern kitchen" />
+      <img src="images/gallery_1.png" alt="Spacious Living Room" />
+      <img src="images/gallery_2.png" alt="Fully Stocked Kitchen" />
+      <img src="images/gallery_3.png" alt="Private Saltwater Pool" />
     </div>
   </section>
 
@@ -37,7 +37,7 @@
     <div class="tag">Villa</div>
     <h1>Summerville Oasis</h1>
     <div class="meta-row">
-      <span class="icon">📍</span><a href="https://www.google.com/maps/place/Canopy+Loop+Dr,+Fort+Myers,+FL+33919">Ft. Myers, FL</a>
+      <span class="icon">📍</span><a href="https://www.google.com/maps?q=Canopy+Loop+Drive,+Ft+Myers,+FL+33919">Ft. Myers, FL</a>
       <span class="divider">·</span>
       <span class="icon">🔗</span><a href="#">Share</a>
     </div>
@@ -51,19 +51,10 @@
 
       <!-- Guests / Beds / Baths -->
       <div class="property-summary">
-        <div class="summary-grid">
-          <div class="summary-block">
-            <div class="summary-icon">👤</div>
-            <div class="summary-label"><strong>8</strong> Guests</div>
-          </div>
-          <div class="summary-block">
-            <div class="summary-icon">🛏️</div>
-            <div class="summary-label"><strong>5</strong> Beds</div>
-          </div>
-          <div class="summary-block">
-            <div class="summary-icon">🛁</div>
-            <div class="summary-label"><strong>3</strong> Baths</div>
-          </div>
+        <div class="summary-row">
+          <div class="summary-item"><span class="summary-icon">👤</span><span>8 Guests</span></div>
+          <div class="summary-item"><span class="summary-icon">🛏️</span><span>5 Beds</span></div>
+          <div class="summary-item"><span class="summary-icon">🛁</span><span>3 Bathrooms</span></div>
         </div>
         <p class="summary-sub">1 King, 2 Queen, 2 Single</p>
       </div>
@@ -110,13 +101,13 @@
       <!-- Essentials -->
       <div class="essentials">
         <h2>Essential Information</h2>
-        <div class="essentials-grid">
-          <div>
+        <div class="essentials-flex">
+          <div class="info-block">
             <h3>⏰ Check-in / Check-out</h3>
             <p><strong>Check-in:</strong> from 3pm</p>
             <p><strong>Check-out:</strong> by 10am</p>
           </div>
-          <div>
+          <div class="info-block">
             <h3>🔒 Deposit</h3>
             <p>A refundable deposit will be held and released after confirming no damage occurred.</p>
           </div>
@@ -136,10 +127,9 @@
   </section>
 
   <script>
-    // Auto-scroll infinite image loop
     const slider = document.getElementById("slider");
     let scrollSpeed = 0.3;
-    let scrollInterval = setInterval(() => {
+    setInterval(() => {
       slider.scrollLeft += scrollSpeed;
       if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
         slider.scrollLeft = 0;
