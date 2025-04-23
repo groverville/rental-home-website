@@ -61,9 +61,11 @@ h1, h2 {
 .slider-arrow.right { right: 10px; }
 
 .icon {
-  width: 20px;
-  height: 20px;
-  stroke: #4a90e2;
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentColor;
+  fill: none;
+  margin-right: 6px;
 }
 
 .summary-row {
@@ -71,14 +73,11 @@ h1, h2 {
   gap: 40px;
   margin-bottom: 10px;
 }
-
 .summary-item {
   display: flex;
   align-items: center;
-  gap: 8px;
   font-size: 1rem;
 }
-
 .summary-sub {
   font-size: 0.95rem;
   color: #666;
