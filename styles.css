@@ -395,6 +395,34 @@ a:hover {
   background-image: url('images/gallery_3.png');
 }
 
+.thumb:nth-child(4) {
+  background-image: url('images/gallery_4.png');
+}
+
+.thumb:nth-child(5) {
+  background-image: url('images/gallery_5.png');
+}
+
+.thumb:nth-child(6) {
+  background-image: url('images/gallery_6.png');
+}
+
+.thumb:nth-child(7) {
+  background-image: url('images/gallery_7.png');
+}
+
+.thumb:nth-child(8) {
+  background-image: url('images/gallery_8.png');
+}
+
+.thumb:nth-child(9) {
+  background-image: url('images/gallery_9.png');
+}
+
+.thumb:nth-child(10) {
+  background-image: url('images/gallery_10.png');
+}
+
 .thumb.active {
   opacity: 1;
   box-shadow: 0 0 0 2px var(--color-accent);
