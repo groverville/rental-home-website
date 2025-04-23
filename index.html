@@ -37,21 +37,9 @@
     <div class="tag">Villa</div>
     <h1>Summerville Oasis</h1>
     <div class="meta-row">
-      <span class="icon">
-        <!-- Map Pin Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="heroicon">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.6569 0 3-1.3431 3-3s-1.3431-3-3-3-3 1.3431-3 3 1.3431 3 3 3zm0 0v10m0-10a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      </span>
-      <a href="https://www.google.com/maps?q=Ft+Myers,+FL">Ft. Myers, FL</a>
+      <span class="icon">📍</span><a href="https://www.google.com/maps?q=Ft+Myers,+FL">Ft. Myers, FL</a>
       <span class="divider">·</span>
-      <span class="icon">
-        <!-- Share Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="heroicon">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12v.01M8 12h8m4 0h.01M12 4v16" />
-        </svg>
-      </span>
-      <a href="#">Share</a>
+      <span class="icon">🔗</span><a href="#">Share</a>
     </div>
   </section>
 
@@ -61,46 +49,20 @@
   <section class="container row-section">
     <div class="main-content">
       <div class="property-summary">
-        <div class="summary-item">
-          <span class="icon">
-            <!-- User Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="heroicon">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A9 9 0 0112 15a9 9 0 016.879 2.804M12 11a4 4 0 100-8 4 4 0 000 8z" />
-            </svg>
-          </span>
-          8 Guests
-        </div>
-        <div class="summary-item">
-          <span class="icon">
-            <!-- Bed Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="heroicon">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 6h18M7 6v14M17 6v14M5 10v10h14V10" />
-            </svg>
-          </span>
-          5 Beds
-        </div>
-        <div class="summary-item">
-          <span class="icon">
-            <!-- Sparkles Icon (as bathtub/bath) -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="heroicon">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v2h18V3M5 8h14v10H5V8z" />
-            </svg>
-          </span>
-          3 Bathrooms
-        </div>
+        <div class="summary-item"><span class="icon">👤</span> 8 Guests</div>
+        <div class="summary-item"><span class="icon">🛏️</span> 5 Beds</div>
+        <div class="summary-item"><span class="icon">🛁</span> 3 Bathrooms</div>
         <p class="bed-info">1 King, 2 Queen, 2 Single</p>
       </div>
 
       <hr />
 
-      <!-- Description -->
       <div class="description">
         <p>This serene home is located just 15 minutes from the airport and a short drive from several stunning beaches. Designed for rest and relaxation, it blends elegance with convenience in a tranquil Florida setting.</p>
       </div>
 
       <hr />
 
-      <!-- Amenities -->
       <div class="amenities">
         <h2>Amenities</h2>
         <ul>
@@ -114,10 +76,22 @@
 
       <hr />
 
-      <!-- Map and Essentials come next... -->
+      <div class="map">
+        <h2>Location</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <hr />
+
+      <div class="essentials">
+        <h2>Essential Information</h2>
+        <div class="essentials-grid">
+          <div><h3>Check-in / Check-out</h3><p><strong>Check-in:</strong> from 3pm</p><p><strong>Check-out:</strong> by 10am</p></div>
+          <div><h3>Deposit</h3><p>A refundable deposit will be held and released after confirming no damage occurred.</p></div>
+        </div>
+      </div>
     </div>
 
-    <!-- Sticky Booking Sidebar -->
     <div class="booking-box">
       <p class="price">From <strong>$650/night</strong></p>
       <label>Check-in<input type="date"></label>
@@ -125,7 +99,6 @@
       <button>Check Availability</button>
       <button class="alt">Ask a Question</button>
       <p class="phone">Or call: <strong>+1 855-553-4954</strong></p>
-
       <div class="calendar">
         <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id@group.calendar.google.com" width="100%" height="300" frameborder="0"></iframe>
       </div>
