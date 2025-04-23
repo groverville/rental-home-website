@@ -143,25 +143,21 @@ h1, h2 {
   font-size: 0.9rem;
 }
 
-.property-summary .summary-grid {
+.summary-row {
   display: flex;
   gap: 40px;
-  align-items: center;
   margin-bottom: 10px;
 }
 
-.summary-block {
+.summary-item {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 1rem;
 }
 
 .summary-icon {
   font-size: 1.5rem;
-}
-
-.summary-label {
-  font-size: 1rem;
 }
 
 .summary-sub {
@@ -180,10 +176,16 @@ h1, h2 {
   margin-bottom: 10px;
 }
 
-.essentials-grid {
+.essentials-flex {
   display: flex;
+  justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
+}
+
+.info-block {
+  flex: 1;
+  min-width: 250px;
 }
 
 .calendar-section {
