@@ -10,8 +10,6 @@
   <!-- SEO Meta Tags -->
   <meta name="description" content="Book your stay at Oasis Retreat, a luxurious vacation rental offering a private pool, elegant amenities, and serene comfort.">
   <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Oasis Retreat | Luxury Vacation Rental">
   <meta property="og:description" content="Luxury, tranquility, and space to unwind. Explore our serene vacation rental.">
   <meta property="og:image" content="https://yourdomain.com/images/hero.jpeg">
@@ -26,7 +24,16 @@
     <nav>
       <a href="gallery.html">Gallery</a>
       <a href="calendar.html">Calendar</a>
-      <a href="contact.html">Contact</a>
+
+      <!-- Contact Dropdown -->
+      <div class="dropdown">
+        <button class="dropdown-toggle">Contact</button>
+        <div class="dropdown-menu">
+          <a href="tel:+1234567890">Call: (123) 456-7890</a>
+          <a href="mailto:hello@oasisretreat.com">Email: hello@oasisretreat.com</a>
+        </div>
+      </div>
+
       <a href="https://buy.stripe.com/test_checkout_link" class="btn-primary">Book Now</a>
     </nav>
   </header>
@@ -39,6 +46,14 @@
     <div class="hero-text">
       <h1>Your Oasis Retreat</h1>
       <p>Luxury, tranquility, and space to unwind.</p>
+
+      <!-- Search Form -->
+      <form class="search-bar">
+        <input type="date" name="arrival" placeholder="Arrival" required />
+        <input type="date" name="departure" placeholder="Departure" required />
+        <input type="number" name="guests" min="1" max="10" placeholder="Guests" required />
+        <button type="submit">Check Availability</button>
+      </form>
     </div>
   </section>
 
@@ -46,7 +61,7 @@
   <section class="section">
     <div class="container">
       <h2>Welcome</h2>
-      <p>Welcome to your private escape. Nestled in a peaceful gated community, our home offers everything you need to relax, recharge, and reconnect. Featuring elegant design, a private saltwater pool, and thoughtful amenities, Oasis Retreat is more than a place to stay — it's an experience.</p>
+      <p>Welcome to your private escape. Nestled in a peaceful neighborhood, our home offers everything you need to relax, recharge, and reconnect. Featuring elegant design, a private pool, and thoughtful amenities, Oasis Retreat is more than a place to stay — it's an experience.</p>
 
       <div class="floating-gallery">
         <img src="images/gallery1.jpg" alt="Open-concept living area with natural light and designer furniture">
@@ -62,50 +77,13 @@
       <h2>What You'll Love</h2>
       <ul>
         <li>3 serene bedrooms with luxury linens</li>
-        <li>Office with desk and monitor</li>
-        <li>Private saltwater pool + hot-tub with lounge chairs</li>
-        <li>High-speed Wi-Fi and Smart TVs in every bedroom</li>
+        <li>Fully equipped chef’s kitchen</li>
+        <li>Private pool + patio with lounge chairs</li>
+        <li>High-speed Wi-Fi and Smart TV</li>
         <li>Modern bathrooms stocked with essentials</li>
       </ul>
     </div>
   </section>
-
-  <!-- FAQ -->
-  <section class="section alt-bg">
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>Is the pool private?</h3>
-      <p>Yes — the pool is fully private and only for use by Oasis Retreat guests.</p>
-
-      <h3>How far is the beach?</h3>
-      <p>The nearest beach is about a 40-minute drive from the home.</p>
-
-      <h3>Do you allow short-term stays?</h3>
-      <p>Unfortunately, per HOA rules, we can only welcome extended stays for a month or more.</p>
-
-      <h3>Is there parking available?</h3>
-      <p>Yes, there is free private garage parking for two vehicles and a drivway.</p>
-    </div>
-  </section>
-
-  <!-- Structured Data for LLMs -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
-    "name": "Oasis Retreat",
-    "description": "A luxury vacation rental with private pool and modern amenities.",
-    "url": "https://groverville.github.io/rental-home-website/",
-    "image": "https://yourdomain.com/images/hero.jpeg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Fort Myers",
-      "addressRegion": "Florida",
-      "addressCountry": "US"
-    }
-  }
-  </script>
 
 </body>
 </html>
