@@ -12,98 +12,110 @@
   <!-- Header -->
   <header class="navbar">
     <div class="nav-wrapper">
-      <div class="nav-contact">
-        <div class="dropdown">
-          <button class="dropdown-toggle">Contact</button>
-          <div class="dropdown-menu">
-            <a href="tel:+1234567890">Call: (123) 456-7890</a>
-            <a href="mailto:hello@g4homes.com">Email: hello@g4homes.com</a>
-          </div>
+      <div class="nav-logo">G<sup>4</sup> Homes</div>
+      <div class="dropdown">
+        <button class="dropdown-toggle">Contact</button>
+        <div class="dropdown-menu">
+          <a href="tel:+1234567890">Call: (123) 456-7890</a>
+          <a href="mailto:hello@g4homes.com">Email: hello@g4homes.com</a>
         </div>
       </div>
-      <div class="nav-logo">G<sup>4</sup> Homes</div>
     </div>
   </header>
 
   <!-- Image Slider -->
   <section class="hero-slider">
-    <div class="slider-container">
-      <img src="images/gallery1.jpg" alt="Exterior of home with pool" />
-      <img src="images/gallery2.jpg" alt="Spacious living room" />
-      <img src="images/gallery3.jpg" alt="Bright open kitchen" />
+    <div class="slider">
+      <img src="images/gallery1.jpg" alt="Poolside at sunset" />
+      <img src="images/gallery2.jpg" alt="Open living space" />
+      <img src="images/gallery3.jpg" alt="Modern kitchen" />
     </div>
   </section>
 
-  <!-- Property Intro -->
-  <section class="property-intro container">
-    <div class="label">Villa</div>
-    <h1 class="title">Summerville Oasis</h1>
-    <div class="location-row">
-      <a href="https://www.google.com/maps?q=Ft+Myers,+FL" class="location">Ft. Myers, FL</a>
+  <!-- Property Title -->
+  <section class="container property-header">
+    <div class="tag">Villa</div>
+    <h1>Summerville Oasis</h1>
+    <div class="meta-row">
+      <span class="icon">📍</span>
+      <a href="https://www.google.com/maps?q=Ft+Myers,+FL">Ft. Myers, FL</a>
       <span class="divider">·</span>
-      <a href="#" class="share-link">Share</a>
+      <span class="icon">🔗</span>
+      <a href="#">Share</a>
     </div>
   </section>
 
-  <!-- Property Stats -->
-  <section class="stats container">
-    <div class="stat"><strong>8</strong> Guests</div>
-    <div class="stat"><strong>5</strong> Beds</div>
-    <div class="stat"><strong>3</strong> Bathrooms</div>
-    <p class="bed-details">1 King, 2 Queen, 2 Single</p>
-  </section>
+  <hr />
 
-  <!-- Description -->
-  <section class="description container">
-    <p>This serene home is located just 15 minutes from the airport and a short drive from several stunning beaches. Designed for rest and relaxation, it blends elegance with convenience in a tranquil Florida setting.</p>
-  </section>
+  <!-- Summary + Booking -->
+  <section class="container row-section">
+    <div class="main-content">
+      <div class="property-summary">
+        <div class="summary-item"><span class="icon">👤</span> 8 Guests</div>
+        <div class="summary-item"><span class="icon">🛏️</span> 5 Beds</div>
+        <div class="summary-item"><span class="icon">🛁</span> 3 Bathrooms</div>
+        <p class="bed-info">1 King, 2 Queen, 2 Single</p>
+      </div>
 
-  <!-- Amenities -->
-  <section class="amenities container">
-    <h2>Amenities</h2>
-    <ul class="amenity-list">
-      <li>Swimming Pool</li>
-      <li>Gym</li>
-      <li>Secure Parking</li>
-      <li>Wi-Fi</li>
-      <li>Clubhouse Access</li>
-    </ul>
-  </section>
+      <hr />
 
-  <!-- Availability -->
-  <section class="availability container">
-    <h2>Availability</h2>
-    <div class="calendar-and-booking">
-      <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id@group.calendar.google.com&ctz=America%2FNew_York" width="100%" height="400" frameborder="0"></iframe>
-      <div class="booking-box">
-        <p class="price-label">from <span>$650</span> per night</p>
-        <label>Check-in<input type="date" /></label>
-        <label>Check-out<input type="date" /></label>
-        <button>Check availability</button>
-        <button class="alt">Ask a question</button>
-        <p class="phone">Or call: <strong>+1 855-553-4954</strong></p>
+      <!-- Description -->
+      <div class="description">
+        <p>This serene home is located just 15 minutes from the airport and a short drive from several stunning beaches. Designed for rest and relaxation, it blends elegance with convenience in a tranquil Florida setting.</p>
+      </div>
+
+      <hr />
+
+      <!-- Amenities -->
+      <div class="amenities">
+        <h2>Amenities</h2>
+        <ul>
+          <li><span class="icon">🏊</span> Pool</li>
+          <li><span class="icon">🏋️</span> Gym</li>
+          <li><span class="icon">🚗</span> Secure Parking</li>
+          <li><span class="icon">📶</span> Wi-Fi</li>
+          <li><span class="icon">🏛️</span> Clubhouse</li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <!-- Map -->
+      <div class="map">
+        <h2>Location</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+      <hr />
+
+      <!-- Essentials -->
+      <div class="essentials">
+        <h2>Essential Information</h2>
+        <div class="essentials-grid">
+          <div>
+            <h3>Check-in / Check-out</h3>
+            <p><strong>Check-in:</strong> from 3pm</p>
+            <p><strong>Check-out:</strong> by 10am</p>
+          </div>
+          <div>
+            <h3>Deposit</h3>
+            <p>A refundable deposit will be held and released after no damage is confirmed.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Map -->
-  <section class="map container">
-    <h2>Location</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11248.131438326206!2d-81.8692926!3d26.6406289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db3f3a3a4e0a0d%3A0x7f6847c7b0b6f399!2sFort%20Myers%2C%20FL!5e0!3m2!1sen!2sus!4v1612137403504!5m2!1sen!2sus" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </section>
+    <!-- Booking Sidebar -->
+    <div class="booking-box">
+      <p class="price">From <strong>$650/night</strong></p>
+      <label>Check-in<input type="date"></label>
+      <label>Check-out<input type="date"></label>
+      <button>Check Availability</button>
+      <button class="alt">Ask a Question</button>
+      <p class="phone">Or call: <strong>+1 855-553-4954</strong></p>
 
-  <!-- Essentials -->
-  <section class="essentials container">
-    <h2>Essential <em>Information</em></h2>
-    <div class="essentials-grid">
-      <div class="item">
-        <h3>Check-in / Check-out</h3>
-        <p><strong>Check-in:</strong> from 3pm. We’ll meet you at the home.</p>
-        <p><strong>Check-out:</strong> by 10am.</p>
-      </div>
-      <div class="item">
-        <h3>Deposit</h3>
-        <p>A refundable deposit will be held for your stay and released after confirming no damage occurred.</p>
+      <div class="calendar">
+        <iframe src="https://calendar.google.com/calendar/embed?src=your-calendar-id@group.calendar.google.com" width="100%" height="300" frameborder="0"></iframe>
       </div>
     </div>
   </section>
