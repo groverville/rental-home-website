@@ -33,8 +33,13 @@ body {
   font-weight: 500;
 }
 
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .navbar nav a {
-  margin-left: 24px;
   font-size: 1rem;
   text-decoration: none;
   color: #333;
@@ -57,6 +62,49 @@ body {
 
 .btn-primary:hover {
   background-color: #000;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+  z-index: 1001;
+  border-radius: 6px;
+  padding: 10px;
+  right: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 /* Hero */
@@ -92,7 +140,40 @@ body {
 
 .hero-text p {
   font-size: 1.2rem;
-  color: white;
+}
+
+/* Search Form */
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.search-bar input,
+.search-bar button {
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.search-bar input {
+  width: 160px;
+}
+
+.search-bar button {
+  background-color: #fff;
+  color: #111;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #f1f1f1;
 }
 
 /* Sections */
@@ -160,11 +241,10 @@ ul li {
     padding: 20px;
   }
 
-  .navbar nav a {
-    margin-left: 0;
-    margin-right: 20px;
-    display: inline-block;
-    margin-top: 10px;
+  .navbar nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
   .hero-text h1 {
@@ -176,6 +256,10 @@ ul li {
   }
 
   .floating-gallery img {
+    width: 100%;
+  }
+
+  .search-bar input {
     width: 100%;
   }
 }
