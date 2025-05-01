@@ -35,7 +35,7 @@
   <section class="hero-gallery">
     <div class="gallery-container">
       <div class="gallery-main">
-        <img src="images/gallery_1.png" alt="Summerville Oasis - Living Room" class="gallery-img active" id="galleryMain">
+        <img src="images/gallery_1.png" alt="Summerville Oasis - Image 1" class="gallery-img active" id="galleryMain">
         <div class="gallery-overlay">
           <div class="property-tag">Villa</div>
           <h1 class="property-title">Summerville Oasis</h1>
@@ -224,7 +224,7 @@
               <div class="minimum-stay-notice">
                 <p><i class="fas fa-calendar-alt"></i> Minimum stay: 30 nights</p>
               </div>
-              <button class="btn-primary">Check availability</button>
+              <button class="btn-primary" id="booking-button">Check availability</button>
               <button class="btn-secondary">Ask a question</button>
               <div class="booking-contact">
                 <p>Or speak to a specialist on the phone:</p>
@@ -238,6 +238,37 @@
       </div>
     </div>
   </section>
+
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <h2>Request to Book</h2>
+      <form class="modal-form" id="booking-request-form" action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+        <div class="form-group">
+          <label for="modal-name">Full Name</label>
+          <input type="text" id="modal-name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="modal-email">Email Address</label>
+          <input type="email" id="modal-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="modal-phone">Phone Number (Optional)</label>
+          <input type="tel" id="modal-phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="modal-dates">Selected Dates</label>
+          <input type="text" id="modal-dates" name="dates" readonly>
+        </div>
+        <div class="form-group">
+          <label for="modal-message">Message (Optional)</label>
+          <textarea id="modal-message" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Request</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -262,152 +293,229 @@
   </footer>
 
   <script>
-    // Gallery functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const galleryMain = document.getElementById('galleryMain');
-      const thumbs = document.querySelectorAll('.gallery-thumbs .thumb');
-      const prevBtn = document.querySelector('.gallery-nav.prev');
-      const nextBtn = document.querySelector('.gallery-nav.next');
-      
-      const images = ['images/gallery_1.png', 'images/gallery_2.png', 'images/gallery_3.png'];
+    document.addEventListener("DOMContentLoaded", function () {
+      // --- Gallery Functionality --- 
+      const galleryMain = document.getElementById("galleryMain");
+      const thumbs = document.querySelectorAll(".gallery-thumbs .thumb");
+      const prevBtn = document.querySelector(".gallery-nav.prev");
+      const nextBtn = document.querySelector(".gallery-nav.next");
+
+      // *** FIX: Updated images array to include all 10 images ***
+      const images = [
+        "images/gallery_1.png",
+        "images/gallery_2.png",
+        "images/gallery_3.png",
+        "images/gallery_4.png",
+        "images/gallery_5.png",
+        "images/gallery_6.png",
+        "images/gallery_7.png",
+        "images/gallery_8.png",
+        "images/gallery_9.png",
+        "images/gallery_10.png",
+      ];
       let currentIndex = 0;
-      
+
       // Update active thumbnail
       function updateThumbs() {
         thumbs.forEach((thumb, i) => {
           if (i === currentIndex) {
-            thumb.classList.add('active');
+            thumb.classList.add("active");
           } else {
-            thumb.classList.remove('active');
+            thumb.classList.remove("active");
           }
         });
       }
-      
+
       // Change main image
       function changeImage(index) {
-        currentIndex = index;
-        galleryMain.src = images[index];
-        updateThumbs();
+        // *** FIX: Ensure index is within bounds ***
+        if (index >= 0 && index < images.length) {
+          currentIndex = index;
+          galleryMain.src = images[index];
+          // Update alt text dynamically
+          galleryMain.alt = `Summerville Oasis - Image ${index + 1}`;
+          updateThumbs();
+        } else {
+          console.error("Invalid image index:", index);
+        }
       }
-      
+
       // Thumbnail click events
       thumbs.forEach((thumb, i) => {
-        thumb.addEventListener('click', () => changeImage(i));
+        thumb.addEventListener("click", () => changeImage(i));
       });
-      
+
       // Navigation buttons
-      prevBtn.addEventListener('click', () => {
+      prevBtn.addEventListener("click", () => {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         changeImage(currentIndex);
       });
-      
-      nextBtn.addEventListener('click', () => {
+
+      nextBtn.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % images.length;
         changeImage(currentIndex);
       });
-      
-      // Navigation menu highlighting
-      const navLinks = document.querySelectorAll('.nav-link');
-      const sections = document.querySelectorAll('section[id]');
-      
+
+      // --- Navigation Menu Highlighting --- 
+      const navLinks = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("section[id]");
+
       function highlightNavLink() {
         const scrollY = window.pageYOffset;
-        
-        sections.forEach(section => {
+
+        sections.forEach((section) => {
           const sectionHeight = section.offsetHeight;
           const sectionTop = section.offsetTop - 100;
-          const sectionId = section.getAttribute('id');
-          
+          const sectionId = section.getAttribute("id");
+
           if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-              if (link.getAttribute('href') === `#${sectionId}`) {
-                link.classList.add('active');
+            navLinks.forEach((link) => {
+              if (link.getAttribute("href") === `#${sectionId}`) {
+                link.classList.add("active");
               } else {
-                link.classList.remove('active');
+                link.classList.remove("active");
               }
             });
           }
         });
       }
-      
-      window.addEventListener('scroll', highlightNavLink);
-      
-      // Contact dropdown
-      const contactBtn = document.querySelector('.btn-contact');
-      const contactDropdown = document.querySelector('.contact-dropdown');
-      
-      contactBtn.addEventListener('click', () => {
-        contactDropdown.classList.toggle('show');
+
+      window.addEventListener("scroll", highlightNavLink);
+
+      // --- Contact Dropdown --- 
+      const contactBtn = document.querySelector(".btn-contact");
+      const contactDropdown = document.querySelector(".contact-dropdown");
+
+      contactBtn.addEventListener("click", () => {
+        contactDropdown.classList.toggle("show");
       });
-      
+
       // Close dropdown when clicking outside
-      document.addEventListener('click', (e) => {
+      document.addEventListener("click", (e) => {
         if (!contactBtn.contains(e.target) && !contactDropdown.contains(e.target)) {
-          contactDropdown.classList.remove('show');
+          contactDropdown.classList.remove("show");
         }
       });
-      
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+
+      // --- Smooth Scrolling --- 
+      document.querySelectorAll("a[href^=\"#\"]").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
           e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
             window.scrollTo({
               top: targetElement.offsetTop - 80,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
           }
         });
       });
-      
-      // 30-day minimum booking validation
-      const checkInInput = document.getElementById('check-in');
-      const checkOutInput = document.getElementById('check-out');
-      const availabilityBtn = document.querySelector('.booking-box .btn-primary');
-      
+
+      // --- Booking Logic --- 
+      const checkInInput = document.getElementById("check-in");
+      const checkOutInput = document.getElementById("check-out");
+      const bookingButton = document.getElementById("booking-button"); // Updated ID
+      const bookingModal = document.getElementById("booking-modal");
+      const modalCloseBtn = document.getElementById("modal-close-btn");
+      const bookingRequestForm = document.getElementById("booking-request-form");
+      const modalDatesInput = document.getElementById("modal-dates");
+
       // Function to calculate days between two dates
       function daysBetween(date1, date2) {
         const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
         const diffDays = Math.round(Math.abs((date1 - date2) / oneDay));
         return diffDays;
       }
-      
-      // Function to validate minimum stay
-      function validateMinimumStay() {
+
+      // Function to validate minimum stay and update button
+      function validateDatesAndUpdateButton() {
+        let isValid = false;
         if (checkInInput.value && checkOutInput.value) {
           const checkIn = new Date(checkInInput.value);
           const checkOut = new Date(checkOutInput.value);
-          
-          const stayLength = daysBetween(checkIn, checkOut);
-          
-          if (stayLength < 30) {
-            alert('This property requires a minimum stay of 30 days.');
+
+          if (checkOut <= checkIn) {
+            // Check-out must be after check-in
+            bookingButton.textContent = "Check availability";
+            bookingButton.disabled = true; // Disable button if dates are invalid
             return false;
           }
-        }
-        return true;
-      }
-      
-      // Add event listener to the availability button
-      if (availabilityBtn) {
-        availabilityBtn.addEventListener('click', function(e) {
-          if (!validateMinimumStay()) {
-            e.preventDefault();
+
+          const stayLength = daysBetween(checkIn, checkOut);
+
+          if (stayLength >= 30) {
+            bookingButton.textContent = "Request to book";
+            bookingButton.disabled = false;
+            isValid = true;
+          } else {
+            bookingButton.textContent = "Minimum 30 nights";
+            bookingButton.disabled = true;
+            isValid = false;
           }
-        });
+        } else {
+          bookingButton.textContent = "Check availability";
+          bookingButton.disabled = true; // Disable if dates aren't selected
+          isValid = false;
+        }
+        return isValid;
       }
+
+      // Add event listeners to date inputs
+      checkInInput.addEventListener("change", validateDatesAndUpdateButton);
+      checkOutInput.addEventListener("change", validateDatesAndUpdateButton);
+
+      // Add event listener to the booking button
+      bookingButton.addEventListener("click", function (e) {
+        if (bookingButton.textContent === "Request to book") {
+          e.preventDefault(); // Prevent default if it's a form submit button
+          if (validateDatesAndUpdateButton()) { // Double check validity
+            // Populate modal dates
+            modalDatesInput.value = `Check-in: ${checkInInput.value}, Check-out: ${checkOutInput.value}`;
+            // Show the modal
+            bookingModal.classList.add("show");
+          } else {
+             alert("Please select valid dates (minimum 30 nights).");
+          }
+        } else if (bookingButton.textContent === "Minimum 30 nights") {
+           e.preventDefault();
+           alert("This property requires a minimum stay of 30 nights.");
+        } else {
+           e.preventDefault();
+           alert("Please select check-in and check-out dates.");
+        }
+      });
+
+      // Close modal functionality
+      modalCloseBtn.addEventListener("click", () => {
+        bookingModal.classList.remove("show");
+      });
+
+      // Close modal when clicking overlay
+      bookingModal.addEventListener("click", (e) => {
+        if (e.target === bookingModal) {
+          bookingModal.classList.remove("show");
+        }
+      });
       
-      // Add event listener to check-out date to validate as user selects
-      if (checkOutInput) {
-        checkOutInput.addEventListener('change', function() {
-          validateMinimumStay();
-        });
-      }
+      // Initial button state check
+      validateDatesAndUpdateButton();
+
+      // --- Form Submission (Using Formspree Example) ---
+      // IMPORTANT: Replace "YOUR_FORMSPREE_ENDPOINT" in the HTML form action
+      // with your actual Formspree endpoint URL.
+      // You can create a free account at formspree.io
+      bookingRequestForm.addEventListener("submit", function(e) {
+        // Optional: Add further client-side validation if needed
+        console.log("Form submitted");
+        // Formspree handles the submission and email sending.
+        // You might want to show a success message after submission.
+        // Consider redirecting to a thank you page or showing a message within the modal.
+      });
+
     });
   </script>
 </body>
