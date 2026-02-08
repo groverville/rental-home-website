@@ -3,39 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Summerville Oasis | G⁴ Homes</title>
+  
+  <title>Summerville Oasis | Luxury 30-Day Rental | G⁴ Homes</title>
+  <meta name="description" content="Experience a serene Florida getaway in Ft. Myers. 5-bedroom luxury home, 15 minutes from the airport and beaches. Perfect for long-term stays.">
+  <meta property="og:title" content="Summerville Oasis | G⁴ Homes">
+  <meta property="og:description" content="Luxury 5-bed, 3-bath villa in Ft. Myers, Florida. Minimum 30-day stay.">
+  <meta property="og:image" content="hero.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    /* Immediate fix for smooth scrolling and modal visibility */
+    html { scroll-behavior: smooth; }
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center; }
+    .modal-overlay.show { display: flex; }
+    .nav-link.active { font-weight: 600; border-bottom: 2px solid currentColor; }
+  </style>
 </head>
 <body>
-  <!-- Header -->
   <header class="navbar">
     <div class="nav-wrapper">
-      <div class="nav-logo">G<sup>4</sup> Homes</div>
+      <div class="nav-logo" onclick="window.scrollTo(0,0)" style="cursor:pointer">G<sup>4</sup> Homes</div>
       <nav class="nav-menu">
-        <a href="#description" class="nav-link active">Description</a>
+        <a href="#description" class="nav-link">Description</a>
         <a href="#amenities" class="nav-link">Amenities</a>
         <a href="#location" class="nav-link">Location</a>
         <a href="#availability" class="nav-link">Availability</a>
       </nav>
       <div class="nav-actions">
-        <button class="btn-contact">Get in touch <i class="fas fa-chevron-down"></i></button>
-        <div class="contact-dropdown">
-          <a href="tel:+1234567890"><i class="fas fa-phone"></i> (248) 688-1893</a>
+        <button class="btn-contact" id="contactDropBtn">Get in touch <i class="fas fa-chevron-down"></i></button>
+        <div class="contact-dropdown" id="contactDropdown">
+          <a href="tel:+12486881893"><i class="fas fa-phone"></i> (248) 688-1893</a>
           <a href="mailto:hello@g4homes.com"><i class="fas fa-envelope"></i> hello@g4homes.com</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Hero Image Gallery -->
   <section class="hero-gallery">
     <div class="gallery-container">
       <div class="gallery-main">
-        <img src="images/gallery_1.png" alt="Summerville Oasis - Image 1" class="gallery-img active" id="galleryMain">
+        <img src="images/gallery_1.png" alt="Summerville Oasis Main View" class="gallery-img active" id="galleryMain">
         <div class="gallery-overlay">
           <div class="property-tag">Villa</div>
           <h1 class="property-title">Summerville Oasis</h1>
@@ -45,27 +58,26 @@
         <button class="gallery-view-all">View all photos</button>
       </div>
       <div class="gallery-thumbs">
-        <div class="thumb active" data-img="images/gallery_1.png"></div>
-        <div class="thumb" data-img="images/gallery_2.png"></div>
-        <div class="thumb" data-img="images/gallery_3.png"></div>
-        <div class="thumb" data-img="images/gallery_4.png"></div>
-        <div class="thumb" data-img="images/gallery_5.png"></div>   
-        <div class="thumb" data-img="images/gallery_6.png"></div>
-        <div class="thumb" data-img="images/gallery_7.png"></div>
-        <div class="thumb" data-img="images/gallery_8.png"></div>   
-        <div class="thumb" data-img="images/gallery_9.png"></div>
-        <div class="thumb" data-img="images/gallery_10.png"></div>
+        <div class="thumb active" data-index="0"></div>
+        <div class="thumb" data-index="1"></div>
+        <div class="thumb" data-index="2"></div>
+        <div class="thumb" data-index="3"></div>
+        <div class="thumb" data-index="4"></div>   
+        <div class="thumb" data-index="5"></div>
+        <div class="thumb" data-index="6"></div>
+        <div class="thumb" data-index="7"></div>   
+        <div class="thumb" data-index="8"></div>
+        <div class="thumb" data-index="9"></div>
       </div>
     </div>
   </section>
 
-  <!-- Property Header -->
   <section class="property-header">
     <div class="container">
       <div class="location-share">
         <div class="location">
           <i class="fas fa-map-marker-alt"></i>
-          <a href="https://www.google.com/maps?q=Canopy+Loop+Drive,+Ft+Myers,+FL+33919" target="_blank">Ft. Myers, FL</a>
+          <a href="https://www.google.com/maps?q=Ft.+Myers,+FL" target="_blank">Ft. Myers, FL</a>
         </div>
         <div class="share-wishlist">
           <button class="btn-wishlist"><i class="far fa-heart"></i> Add to wishlist</button>
@@ -75,39 +87,26 @@
     </div>
   </section>
 
-  <!-- Main Content -->
   <section class="main-section">
     <div class="container">
       <div class="content-grid">
-        <!-- Left Column: Main Content -->
         <div class="main-content">
-          <!-- Property Summary -->
           <div class="property-summary" id="description">
             <div class="summary-icons">
               <div class="summary-item">
                 <i class="fas fa-user"></i>
-                <div class="summary-text">
-                  <span class="summary-number">8</span>
-                  <span class="summary-label">Guests</span>
-                </div>
+                <div class="summary-text"><span class="summary-number">8</span><span class="summary-label">Guests</span></div>
               </div>
               <div class="summary-item">
                 <i class="fas fa-bed"></i>
-                <div class="summary-text">
-                  <span class="summary-number">5</span>
-                  <span class="summary-label">Beds</span>
-                </div>
+                <div class="summary-text"><span class="summary-number">5</span><span class="summary-label">Beds</span></div>
               </div>
               <div class="summary-item">
                 <i class="fas fa-bath"></i>
-                <div class="summary-text">
-                  <span class="summary-number">3</span>
-                  <span class="summary-label">Bathrooms</span>
-                </div>
+                <div class="summary-text"><span class="summary-number">3</span><span class="summary-label">Bathrooms</span></div>
               </div>
             </div>
-            <p class="bed-configuration">1 King, 2 Queen, 2 Single</p>
-            
+            <p class="bed-configuration"><strong>Beds:</strong> 1 King, 2 Queen, 2 Single</p>
             <div class="property-description">
               <p>This serene home is located just 15 minutes from the airport and a short drive from several stunning beaches. Designed for rest and relaxation, it blends elegance with convenience in a tranquil Florida setting.</p>
             </div>
@@ -115,90 +114,39 @@
 
           <div class="content-divider"></div>
 
-          <!-- Amenities -->
           <div class="amenities-section" id="amenities">
             <h2>Amenities</h2>
             <div class="amenities-grid">
-              <div class="amenity-item">
-                <i class="fas fa-swimming-pool"></i>
-                <span>Swimming pool</span>
-              </div>
-              <div class="amenity-item">
-                <i class="fas fa-dumbbell"></i>
-                <span>Gym</span>
-              </div>
-              <div class="amenity-item">
-                <i class="fas fa-parking"></i>
-                <span>Secure parking</span>
-              </div>
-              <div class="amenity-item">
-                <i class="fas fa-wifi"></i>
-                <span>WiFi</span>
-              </div>
-              <div class="amenity-item">
-                <i class="fas fa-building"></i>
-                <span>Clubhouse</span>
-              </div>
+              <div class="amenity-item"><i class="fas fa-swimming-pool"></i><span>Swimming pool</span></div>
+              <div class="amenity-item"><i class="fas fa-dumbbell"></i><span>Gym</span></div>
+              <div class="amenity-item"><i class="fas fa-parking"></i><span>Secure parking</span></div>
+              <div class="amenity-item"><i class="fas fa-wifi"></i><span>WiFi</span></div>
+              <div class="amenity-item"><i class="fas fa-building"></i><span>Clubhouse</span></div>
             </div>
-            <button class="btn-text">See all amenities</button>
           </div>
 
           <div class="content-divider"></div>
 
-                 <!-- Location -->
           <div class="location-section" id="location">
             <h2>Location</h2>
             <div class="map-container">
-              <iframe src="https://www.google.com/maps?q=Canopy+Loop+Drive,+Ft+Myers,+FL+33919&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m1!1s0x88db400192e27c7f:0x6470077c57ed5c0!2sFort+Myers,+FL!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
           </div>
 
           <div class="content-divider"></div>
 
-          <!-- Availability -->
           <div class="availability-section" id="availability">
             <h2>Availability</h2>
             <div class="calendar-container">
-              <!-- Public Google Calendar Embed with no sign-in required -->
-              <iframe 
-              src="https://calendar.google.com/calendar/embed?src=grovervilles%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no">
-                style="border: 0" 
-                width="100%" 
-                height="400" 
-                frameborder="0" 
-                scrolling="no">
-              </iframe>
+              <iframe src="https://calendar.google.com/calendar/embed?src=grovervilles%40gmail.com&ctz=America%2FNew_York" style="border: 0" width="100%" height="500" frameborder="0" scrolling="no"></iframe>
             </div>
-            
             <div class="booking-notice">
               <p><i class="fas fa-info-circle"></i> <strong>Note:</strong> This property requires a minimum stay of 30 days.</p>
             </div>
           </div>
-
-          <div class="content-divider"></div>
-
-          <!-- Essential Information -->
-          <div class="essentials-section">
-            <h2>Essential Information</h2>
-            <div class="essentials-grid">
-              <div class="essential-item">
-                <h3><i class="far fa-clock"></i> Check-in / Check-out</h3>
-                <div class="essential-details">
-                  <p><strong>Check-in:</strong> from 3pm</p>
-                  <p><strong>Check-out:</strong> by 10am</p>
-                </div>
-              </div>
-              <div class="essential-item">
-                <h3><i class="fas fa-shield-alt"></i> Deposit</h3>
-                <div class="essential-details">
-                  <p>A refundable deposit will be held and released after confirming no damage occurred.</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- Right Column: Booking Box -->
         <div class="sidebar">
           <div class="booking-box">
             <div class="price-container">
@@ -206,31 +154,22 @@
                 <span class="price-amount">$650</span>
                 <span class="price-period">per night</span>
               </div>
-              <button class="btn-info" aria-label="Price information">
-                <i class="fas fa-info-circle"></i>
-              </button>
             </div>
             <div class="booking-form">
               <div class="date-inputs">
                 <div class="date-field">
                   <label for="check-in">Check in</label>
-                  <input type="date" id="check-in" placeholder="Add dates">
+                  <input type="date" id="check-in">
                 </div>
                 <div class="date-field">
                   <label for="check-out">Check out</label>
-                  <input type="date" id="check-out" placeholder="Add dates">
+                  <input type="date" id="check-out">
                 </div>
               </div>
               <div class="minimum-stay-notice">
-                <p><i class="fas fa-calendar-alt"></i> Minimum stay: 30 nights</p>
+                <p id="stay-calc"><i class="fas fa-calendar-alt"></i> Minimum stay: 30 nights</p>
               </div>
-              <button class="btn-primary" id="booking-button">Check availability</button>
-              <div class="booking-contact">
-                <p>Or speak to a specialist on the phone:</p>
-                <a href="tel:+18555534954" class="phone-number">
-                  <i class="fas fa-phone"></i> +1 248-688-1893
-                </a>
-              </div>
+              <button class="btn-primary" id="booking-button" disabled>Check availability</button>
             </div>
           </div>
         </div>
@@ -238,283 +177,123 @@
     </div>
   </section>
 
-  <!-- Booking Modal -->
   <div class="modal-overlay" id="booking-modal">
     <div class="modal-content">
-      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <button class="modal-close" id="modal-close-btn">×</button>
       <h2>Request to Book</h2>
-      <form class="modal-form" id="booking-request-form" action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+      <p id="modal-date-display" style="margin-bottom: 20px; color: #666;"></p>
+      <form class="modal-form" id="booking-request-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+        <input type="hidden" name="dates" id="hidden-dates">
         <div class="form-group">
           <label for="modal-name">Full Name</label>
-          <input type="text" id="modal-name" name="name" required>
+          <input type="text" id="modal-name" name="name" required placeholder="John Doe">
         </div>
         <div class="form-group">
           <label for="modal-email">Email Address</label>
-          <input type="email" id="modal-email" name="email" required>
+          <input type="email" id="modal-email" name="email" required placeholder="john@example.com">
         </div>
         <div class="form-group">
-          <label for="modal-phone">Phone Number (Optional)</label>
-          <input type="tel" id="modal-phone" name="phone">
+          <label for="modal-message">Special Requests</label>
+          <textarea id="modal-message" name="message" placeholder="Anything we should know?"></textarea>
         </div>
-        <div class="form-group">
-          <label for="modal-dates">Selected Dates</label>
-          <input type="text" id="modal-dates" name="dates" readonly>
-        </div>
-        <div class="form-group">
-          <label for="modal-message">Message (Optional)</label>
-          <textarea id="modal-message" name="message"></textarea>
-        </div>
-        <button type="submit" class="btn-primary">Send Request</button>
+        <button type="submit" class="btn-primary">Send Booking Inquiry</button>
       </form>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">G<sup>4</sup> Homes</div>
         <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Contact Us</a>
+          <a href="about.html">About Us</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact Us</a>
         </div>
         <div class="footer-social">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
       <div class="footer-copyright">
-        <p>&copy; 2025 G4 Homes. All rights reserved.</p>
+        <p>© 2026 G4 Homes. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // --- Gallery Functionality --- 
+      // 1. Gallery Logic
       const galleryMain = document.getElementById("galleryMain");
-      const thumbs = document.querySelectorAll(".gallery-thumbs .thumb");
-      const prevBtn = document.querySelector(".gallery-nav.prev");
-      const nextBtn = document.querySelector(".gallery-nav.next");
-
-      // *** FIX: Updated images array to include all 10 images ***
-      const images = [
-        "images/gallery_1.png",
-        "images/gallery_2.png",
-        "images/gallery_3.png",
-        "images/gallery_4.png",
-        "images/gallery_5.png",
-        "images/gallery_6.png",
-        "images/gallery_7.png",
-        "images/gallery_8.png",
-        "images/gallery_9.png",
-        "images/gallery_10.png",
-      ];
+      const thumbs = document.querySelectorAll(".thumb");
+      const images = Array.from({length: 10}, (_, i) => `images/gallery_${i+1}.png`);
       let currentIndex = 0;
 
-      // Update active thumbnail
-      function updateThumbs() {
-        thumbs.forEach((thumb, i) => {
-          if (i === currentIndex) {
-            thumb.classList.add("active");
-          } else {
-            thumb.classList.remove("active");
-          }
-        });
+      function updateGallery(index) {
+        currentIndex = index;
+        galleryMain.src = images[index];
+        thumbs.forEach((t, i) => t.classList.toggle('active', i === index));
       }
 
-      // Change main image
-      function changeImage(index) {
-        // *** FIX: Ensure index is within bounds ***
-        if (index >= 0 && index < images.length) {
-          currentIndex = index;
-          galleryMain.src = images[index];
-          // Update alt text dynamically
-          galleryMain.alt = `Summerville Oasis - Image ${index + 1}`;
-          updateThumbs();
-        } else {
-          console.error("Invalid image index:", index);
-        }
-      }
-
-      // Thumbnail click events
       thumbs.forEach((thumb, i) => {
-        thumb.addEventListener("click", () => changeImage(i));
+        thumb.style.backgroundImage = `url(${images[i]})`;
+        thumb.addEventListener('click', () => updateGallery(i));
       });
 
-      // Navigation buttons
-      prevBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        changeImage(currentIndex);
-      });
+      document.querySelector(".gallery-nav.prev").onclick = () => updateGallery((currentIndex - 1 + 10) % 10);
+      document.querySelector(".gallery-nav.next").onclick = () => updateGallery((currentIndex + 1) % 10);
 
-      nextBtn.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        changeImage(currentIndex);
-      });
-
-      // --- Navigation Menu Highlighting --- 
-      const navLinks = document.querySelectorAll(".nav-link");
-      const sections = document.querySelectorAll("section[id]");
-
-      function highlightNavLink() {
-        const scrollY = window.pageYOffset;
-
-        sections.forEach((section) => {
-          const sectionHeight = section.offsetHeight;
-          const sectionTop = section.offsetTop - 100;
-          const sectionId = section.getAttribute("id");
-
-          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach((link) => {
-              if (link.getAttribute("href") === `#${sectionId}`) {
-                link.classList.add("active");
-              } else {
-                link.classList.remove("active");
-              }
-            });
+      // 2. Navigation Highlighting
+      const links = document.querySelectorAll(".nav-link");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${entry.target.id}`));
           }
         });
-      }
+      }, { threshold: 0.6 });
+      document.querySelectorAll("div[id], section[id]").forEach(s => observer.observe(s));
 
-      window.addEventListener("scroll", highlightNavLink);
+      // 3. Contact Dropdown
+      const dropBtn = document.getElementById("contactDropBtn");
+      const dropMenu = document.getElementById("contactDropdown");
+      dropBtn.onclick = (e) => { e.stopPropagation(); dropMenu.classList.toggle('show'); };
+      window.onclick = () => dropMenu.classList.remove('show');
 
-      // --- Contact Dropdown --- 
-      const contactBtn = document.querySelector(".btn-contact");
-      const contactDropdown = document.querySelector(".contact-dropdown");
+      // 4. Booking Calculation & Validation
+      const checkIn = document.getElementById("check-in");
+      const checkOut = document.getElementById("check-out");
+      const bookBtn = document.getElementById("booking-button");
+      const stayCalc = document.getElementById("stay-calc");
 
-      contactBtn.addEventListener("click", () => {
-        contactDropdown.classList.toggle("show");
-      });
+      function validateBooking() {
+        if (checkIn.value && checkOut.value) {
+          const start = new Date(checkIn.value);
+          const end = new Date(checkOut.value);
+          const diff = (end - start) / (1000 * 60 * 60 * 24);
 
-      // Close dropdown when clicking outside
-      document.addEventListener("click", (e) => {
-        if (!contactBtn.contains(e.target) && !contactDropdown.contains(e.target)) {
-          contactDropdown.classList.remove("show");
-        }
-      });
-
-      // --- Smooth Scrolling --- 
-      document.querySelectorAll("a[href^=\"#\"]").forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute("href");
-          if (targetId === "#") return;
-
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: "smooth",
-            });
-          }
-        });
-      });
-
-      // --- Booking Logic --- 
-      const checkInInput = document.getElementById("check-in");
-      const checkOutInput = document.getElementById("check-out");
-      const bookingButton = document.getElementById("booking-button"); // Updated ID
-      const bookingModal = document.getElementById("booking-modal");
-      const modalCloseBtn = document.getElementById("modal-close-btn");
-      const bookingRequestForm = document.getElementById("booking-request-form");
-      const modalDatesInput = document.getElementById("modal-dates");
-
-      // Function to calculate days between two dates
-      function daysBetween(date1, date2) {
-        const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-        const diffDays = Math.round(Math.abs((date1 - date2) / oneDay));
-        return diffDays;
-      }
-
-      // Function to validate minimum stay and update button
-      function validateDatesAndUpdateButton() {
-        let isValid = false;
-        if (checkInInput.value && checkOutInput.value) {
-          const checkIn = new Date(checkInInput.value);
-          const checkOut = new Date(checkOutInput.value);
-
-          if (checkOut <= checkIn) {
-            // Check-out must be after check-in
-            bookingButton.textContent = "Check availability";
-            bookingButton.disabled = true; // Disable button if dates are invalid
-            return false;
-          }
-
-          const stayLength = daysBetween(checkIn, checkOut);
-
-          if (stayLength >= 30) {
-            bookingButton.textContent = "Request to book";
-            bookingButton.disabled = false;
-            isValid = true;
+          if (diff >= 30) {
+            stayCalc.innerHTML = `<i class="fas fa-check-circle" style="color:green"></i> Duration: ${diff} nights`;
+            bookBtn.disabled = false;
+            bookBtn.textContent = "Request to Book";
           } else {
-            bookingButton.textContent = "Minimum 30 nights";
-            bookingButton.disabled = true;
-            isValid = false;
+            stayCalc.innerHTML = `<i class="fas fa-exclamation-triangle" style="color:red"></i> Must be 30+ nights (Current: ${diff || 0})`;
+            bookBtn.disabled = true;
           }
-        } else {
-          bookingButton.textContent = "Check availability";
-          bookingButton.disabled = true; // Disable if dates aren't selected
-          isValid = false;
         }
-        return isValid;
       }
 
-      // Add event listeners to date inputs
-      checkInInput.addEventListener("change", validateDatesAndUpdateButton);
-      checkOutInput.addEventListener("change", validateDatesAndUpdateButton);
+      checkIn.onchange = validateBooking;
+      checkOut.onchange = validateBooking;
 
-      // Add event listener to the booking button
-      bookingButton.addEventListener("click", function (e) {
-        if (bookingButton.textContent === "Request to book") {
-          e.preventDefault(); // Prevent default if it's a form submit button
-          if (validateDatesAndUpdateButton()) { // Double check validity
-            // Populate modal dates
-            modalDatesInput.value = `Check-in: ${checkInInput.value}, Check-out: ${checkOutInput.value}`;
-            // Show the modal
-            bookingModal.classList.add("show");
-          } else {
-             alert("Please select valid dates (minimum 30 nights).");
-          }
-        } else if (bookingButton.textContent === "Minimum 30 nights") {
-           e.preventDefault();
-           alert("This property requires a minimum stay of 30 nights.");
-        } else {
-           e.preventDefault();
-           alert("Please select check-in and check-out dates.");
-        }
-      });
-
-      // Close modal functionality
-      modalCloseBtn.addEventListener("click", () => {
-        bookingModal.classList.remove("show");
-      });
-
-      // Close modal when clicking overlay
-      bookingModal.addEventListener("click", (e) => {
-        if (e.target === bookingModal) {
-          bookingModal.classList.remove("show");
-        }
-      });
-      
-      // Initial button state check
-      validateDatesAndUpdateButton();
-
-      // --- Form Submission (Using Formspree Example) ---
-      // IMPORTANT: Replace "YOUR_FORMSPREE_ENDPOINT" in the HTML form action
-      // with your actual Formspree endpoint URL.
-      // You can create a free account at formspree.io
-      bookingRequestForm.addEventListener("submit", function(e) {
-        // Optional: Add further client-side validation if needed
-        console.log("Form submitted");
-        // Formspree handles the submission and email sending.
-        // You might want to show a success message after submission.
-        // Consider redirecting to a thank you page or showing a message within the modal.
-      });
-
+      // 5. Modal Handling
+      const modal = document.getElementById("booking-modal");
+      bookBtn.onclick = () => {
+        document.getElementById("modal-date-display").textContent = `Selected: ${checkIn.value} to ${checkOut.value}`;
+        document.getElementById("hidden-dates").value = `${checkIn.value} to ${checkOut.value}`;
+        modal.classList.add('show');
+      };
+      document.getElementById("modal-close-btn").onclick = () => modal.classList.remove('show');
     });
   </script>
 </body>
